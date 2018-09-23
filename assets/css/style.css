@@ -1,0 +1,23 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, 
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+#site-logo {
+    font-family: 'Cabin Sketch', cursive;
+    font-weight: 700;
+}
+
+#site-header {
+    background-image: url("../images/food-on-marble-countertop.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}

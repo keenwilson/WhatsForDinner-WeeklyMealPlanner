@@ -19,22 +19,133 @@
 </head>
 
 <body>
-    <section class="section">
-        <div class="container">
-            <h1 class="title">
-                Hello World
-            </h1>
-            <p class="subtitle">
-                My first website with <strong>Bulma</strong>!
-            </p>
+    <!-- Navbaf -->
+    <nav class="navbar is-transparent">
+        <div class="navbar-brand">
+            <a id="site-logo" class="navbar-item" href="#">
+                What's For Dinner?
+            </a>
+            <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div id="navbarExampleTransparentExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="#">
+                    Home
+                </a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="#">
+                        Resources
+                    </a>
+                    <div class="navbar-dropdown is-boxed">
+                        <a class="navbar-item" href="#">
+                            Family-Friendly Dinner
+                        </a>
+                        <a class="navbar-item" href="#">
+                            15-Min Cooking Recipes
+                        </a>
+                        <a class="navbar-item" href="#">
+                            Weekly Theme for Fun!
+                        </a>
+                        <a class="navbar-item" href="#">
+                            Sheet Pan Recipes
+                        </a>
+                        <a class="navbar-item" href="#">
+                            Kid-Approved Recipes
+                        </a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item" href="#">
+                            View Your Saved Recipes
+                        </a>
+                        <a class="navbar-item is-active" href="https://bulma.io/documentation/components/breadcrumb/">
+                            Get a Random Meal Plan
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="field is-grouped">
+                        <p class="control">
+                            <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet"
+                                data-social-target="http://localhost:4000" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=http://localhost:4000&amp;via=jgthms">
+                                <span class="icon">
+                                    <i class="fab fa-twitter"></i>
+                                </span>
+                                <span>
+                                    Tweet
+                                </span>
+                            </a>
+                        </p>
+                        <p class="control">
+                            <a class="button is-primary" href="https://github.com/jgthms/bulma/releases/download/0.7.1/bulma-0.7.1.zip">
+                                <span class="icon">
+                                    <i class="fas fa-download"></i>
+                                </span>
+                                <span>Download</span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title is-1" id="site-logo">
+                    What's For Dinner?
+                </h1>
+                <p class="subtitle">
+                    You will find great meals that the <strong>whole family</strong> will enjoy!
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="site-header" class="hero is-large">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-mobile is-centered">
+                    <div class="column is-half">
+                        <div class="field has-addons">
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Find a recipe">
+                            </div>
+                            <div class="control">
+                                <a class="button is-primary">
+                                    Search
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
+
+
+
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>What's For Dinner</strong> by <a href="#">Group 5 Studio</a>.
+            </p>
+        </div>
+    </footer>
     <!-- Link jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <!-- Link JavaScript -->
     <script src="assets/javascript/app.js"></script>
+    <!-- Link Firebase -->
 </body>
 
 </html>
