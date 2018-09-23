@@ -8,4 +8,15 @@ $(document).ready(function () {
         $(".navbar-menu").toggleClass("is-active");
 
     });
+
+    // Toggle Recipe Display (Modal)
+    $(".show-modal").click(function () {
+        $(".modal").addClass("is-active");
+    });
+
+    $(".modal-close").click(function () {
+        $(".modal").removeClass("is-active");
+    });
+
+
 });
