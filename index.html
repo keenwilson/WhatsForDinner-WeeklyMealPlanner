@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <!-- Navbaf -->
+    <!-- Navbar -->
     <nav class="navbar is-transparent">
         <div class="navbar-brand">
             <a id="site-logo" class="navbar-item" href="#">
@@ -39,7 +39,7 @@
                 </a>
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link" href="#">
-                        Resources
+                        Resources & Tools
                     </a>
                     <div class="navbar-dropdown is-boxed">
                         <a class="navbar-item" href="#">
@@ -61,13 +61,18 @@
                         <a class="navbar-item" href="#">
                             View Your Saved Recipes
                         </a>
-                        <a class="navbar-item is-active" href="https://bulma.io/documentation/components/breadcrumb/">
+                        <a class="navbar-item" href="#">
                             Get a Random Meal Plan
+                        </a>
+                        <a class="navbar-item" href="#">
+                            Create an Ingredients List
+                        </a>
+                        <a class="navbar-item is-active" href="https://bulma.io/documentation/components/breadcrumb/">
+                            Find a Grocery Store
                         </a>
                     </div>
                 </div>
             </div>
-
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="field is-grouped">
@@ -95,6 +100,8 @@
             </div>
         </div>
     </nav>
+
+    <!-- Hero + search bar -->
     <section class="hero">
         <div class="hero-body">
             <div class="container">
@@ -128,12 +135,11 @@
             </div>
         </div>
     </section>
+
     <!-- Create content area for recipes using tile + card + box -->
 
     <section>
-        <div class="container">
-
-
+        <div class="container-fluid">
             <div class="tile is-ancestor">
                 <div class="tile is-parent">
                     <article class="tile is-child box">
@@ -155,9 +161,9 @@
                                 </div>
                             </div>
                             <footer class="card-footer">
-                                <a href="#" class="card-footer-item">Get the Recipe</a>
-                                <a href="#" class="card-footer-item">Add to Planner</a>
-                                <a href="#" class="card-footer-item">Delete</a>
+                                    <a href="#" class="card-footer-item">Add to Planner</a>
+                                    <a href="#" class="card-footer-item">Save</a>
+                                    <a href="#" class="card-footer-item">Delete</a>
                             </footer>
                         </div> <!-- End Recipe Card -->
                     </article>
@@ -166,26 +172,26 @@
                     <article class="tile is-child box">
                         <!-- 2nd Column -->
                         <div class="card">
-                                <!-- Start Recipe Card -->
-                                <div class="card-image">
-                                    <figure class="image is-square">
-                                        <img src="https://bulma.io/images/placeholders/480x480.png" alt="Placeholder image">
-                                    </figure>
+                            <!-- Start Recipe Card -->
+                            <div class="card-image">
+                                <figure class="image is-square">
+                                    <img src="https://bulma.io/images/placeholders/480x480.png" alt="Placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="content">
+                                    <h3 class="title">Kale Salad</h3>
+                                    <p class="calories"> 97 Calories</p>
+                                    <p class="ingredients"> 9 Ingredients</p>
+                                    <br>
+                                    <p class="subtitle"><a href="#">Get the Recipe</a></p>
                                 </div>
-                                <div class="card-content">
-                                    <div class="content">
-                                        <h3 class="title">Kale Salad</h3>
-                                        <p class="calories"> 97 Calories</p>
-                                        <p class="ingredients"> 9 Ingredients</p>
-                                        <br>
-                                        <p class="subtitle"><a href="#">Get the Recipe</a></p>
-                                    </div>
-                                </div>
-                                <footer class="card-footer">
-                                    <a href="#" class="card-footer-item">Get the Recipe</a>
+                            </div>
+                            <footer class="card-footer">
                                     <a href="#" class="card-footer-item">Add to Planner</a>
+                                    <a href="#" class="card-footer-item">Save</a>
                                     <a href="#" class="card-footer-item">Delete</a>
-                                </footer>
+                            </footer>
                         </div> <!-- End Recipe Card -->
                     </article>
                 </div>
@@ -193,26 +199,26 @@
                     <article class="tile is-child box">
                         <!-- 3rd Column -->
                         <div class="card">
-                                <!-- Start Recipe Card -->
-                                <div class="card-image">
-                                    <figure class="image is-square">
-                                        <img src="https://bulma.io/images/placeholders/480x480.png" alt="Placeholder image">
-                                    </figure>
+                            <!-- Start Recipe Card -->
+                            <div class="card-image">
+                                <figure class="image is-square">
+                                    <img src="https://bulma.io/images/placeholders/480x480.png" alt="Placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="content">
+                                    <h3 class="title">Kale Salad</h3>
+                                    <p class="calories"> 97 Calories</p>
+                                    <p class="ingredients"> 9 Ingredients</p>
+                                    <br>
+                                    <p class="subtitle"><a href="#">Get the Recipe</a></p>
                                 </div>
-                                <div class="card-content">
-                                    <div class="content">
-                                        <h3 class="title">Kale Salad</h3>
-                                        <p class="calories"> 97 Calories</p>
-                                        <p class="ingredients"> 9 Ingredients</p>
-                                        <br>
-                                        <p class="subtitle"><a href="#">Get the Recipe</a></p>
-                                    </div>
-                                </div>
-                                <footer class="card-footer">
-                                    <a href="#" class="card-footer-item">Get the Recipe</a>
+                            </div>
+                            <footer class="card-footer">
                                     <a href="#" class="card-footer-item">Add to Planner</a>
+                                    <a href="#" class="card-footer-item">Save</a>
                                     <a href="#" class="card-footer-item">Delete</a>
-                                </footer>
+                            </footer>
                         </div> <!-- End Recipe Card -->
                     </article>
                 </div>
@@ -220,50 +226,146 @@
                     <article class="tile is-child box">
                         <!-- 4th Column -->
                         <div class="card">
-                                <!-- Start Recipe Card -->
-                                <div class="card-image">
-                                    <figure class="image is-square">
-                                        <img src="https://bulma.io/images/placeholders/480x480.png" alt="Placeholder image">
-                                    </figure>
+                            <!-- Start Recipe Card -->
+                            <div class="card-image">
+                                <figure class="image is-square">
+                                    <img src="https://bulma.io/images/placeholders/480x480.png" alt="Placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="content">
+                                    <h3 class="title">Kale Salad</h3>
+                                    <p class="calories"> 97 Calories</p>
+                                    <p class="ingredients"> 9 Ingredients</p>
+                                    <br>
+                                    <p class="subtitle"><a href="#">Get the Recipe</a></p>
                                 </div>
-                                <div class="card-content">
-                                    <div class="content">
-                                        <h3 class="title">Kale Salad</h3>
-                                        <p class="calories"> 97 Calories</p>
-                                        <p class="ingredients"> 9 Ingredients</p>
-                                        <br>
-                                        <p class="subtitle"><a href="#">Get the Recipe</a></p>
-                                    </div>
-                                </div>
-                                <footer class="card-footer">
-                                    <a href="#" class="card-footer-item">Get the Recipe</a>
-                                    <a href="#" class="card-footer-item">Add to Planner</a>
-                                    <a href="#" class="card-footer-item">Delete</a>
-                                </footer>
+                            </div>
+                            <footer class="card-footer">
+                                <a href="#" class="card-footer-item">Add to Planner</a>
+                                <a href="#" class="card-footer-item">Save</a>
+                                <a href="#" class="card-footer-item">Delete</a>
+                            </footer>
                         </div> <!-- End Recipe Card -->
                     </article>
                 </div>
             </div> <!-- End tile is-ancestor -->
-
-
-        </div> 
+        </div>
     </section>
 
 
     <!-- End content area -->
 
-    
-    </section>
+    <div class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Modal title</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <!-- Content ... -->
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-success">Save changes</button>
+                <button class="button">Cancel</button>
+            </footer>
+        </div>
+    </div>
 
 
+    <!--  Footer -->
+    <footer class="footer footer-dark">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="footer-logo">
+                        <img src="https://bulma.io/images/placeholders/480x480.png">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="footer-column">
+                        <div class="footer-header">
+                            <h3>Home</h3>
+                        </div>
+                        <ul class="link-list">
+                            <li><a href="#">Discover features</a></li>
+                            <li><a href="#">Why choose our Product ?</a></li>
+                            <li><a href="#">Compare features</a></li>
+                            <li><a href="#">Our Roadmap</a></li>
+                            <li><a href="#">Request features</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="footer-column">
+                        <div class="footer-header">
+                            <h3>Blog</h3>
+                        </div>
+                        <ul class="link-list">
+                            <li><a href="#">Family-Friendly Dinner</a></li>
+                            <li><a href="#">15-min Cooking Recipes</a></li>
+                            <li><a href="#">Weekly Theme for Fun!</a></li>
+                            <li><a href="#">Sheet Pan Recipes</a></li>
 
-    <footer class="footer">
-        <div class="content has-text-centered">
-            <p>
-                <strong>What's For Dinner</strong> by <a href="#">Group 5 Studio</a>.
-            </p>
+                            <li><a href="#">Kid-Approved Recipes</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="footer-column">
+                        <div class="footer-header">
+                            <h3>Tools</h3>
+                        </div>
+                        <ul class="link-list">
+                            <li><a href="#">Your Saved Recipes</a></li>
+                            <li><a href="#">Get a Random Meal Plan</a></li>
+                            <li><a href="#">Create an Ingredients List</a></li>
+                            <li><a href="#">Find a Grocery Store</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="footer-column">
+                        <div class="footer-header">
+                            <h3>Follow Us</h3>
+                            <nav class="level is-mobile">
+                                <div class="level-left">
+                                    <a class="level-item" href="https://github.com/#">
+                                        <span class="icon"><i class="fa fa-github"></i></span>
+                                    </a>
+                                    <a class="level-item" href="https://dribbble.com/#">
+                                        <span class="icon"><i class="fa fa-dribbble"></i></span>
+                                    </a>
+                                    <a class="level-item" href="https://fb.com/#">
+                                        <span class="icon"><i class="fa fa-facebook"></i></span>
+                                    </a>
+                                    <a class="level-item" href="https://twitter.com/#">
+                                        <span class="icon"><i class="fa fa-twitter"></i></span>
+                                    </a>
+                                    <a class="level-item" href="https://bitbucket.org/#">
+                                        <span class="icon"><i class="fa fa-bitbucket"></i></span>
+                                    </a>
+                                </div>
+                            </nav>
+
+                            <a href="https://bulma.io" target="_blank">
+                                <img src="assets/images/logos/made-with-bulma.png" alt="Made with Bulma" width="128"
+                                    height="24">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
+
+
+    <!-- End Footer -->
+
+
+
+
     <!-- Link jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
