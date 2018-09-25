@@ -36,7 +36,7 @@ $(document).ready(function () {
     // userName = $("#name-input").val().trim();
     //   userEmail = $("#email-input").val().trim();
     //   userPassword = $("#age-input").val().trim();
-    recipeSearch = $(".input").val().trim();
+    recipeSearch = // Get API URL
 
     database.ref().push({
       // name: name,
