@@ -67,4 +67,15 @@ $(document).ready(function () {
       }, function (errorObject) {
       console.log("Errors handled: " + errorObject.code);
     });
+
+    // Toggle Recipe Display (Modal)
+    $(".show-modal").click(function () {
+        $(".modal").addClass("is-active");
+    });
+
+    $(".modal-close").click(function () {
+        $(".modal").removeClass("is-active");
+    });
+
+
 });
