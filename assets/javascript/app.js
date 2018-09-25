@@ -8,4 +8,30 @@ $(document).ready(function () {
         $(".navbar-menu").toggleClass("is-active");
 
     });
+
+     // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBm3WJjLjgcJPwZFp7uoE3ii18LDpz9hm4",
+    authDomain: "what-s-for-dinner-3fa2d.firebaseapp.com",
+    databaseURL: "https://what-s-for-dinner-3fa2d.firebaseio.com",
+    projectId: "what-s-for-dinner-3fa2d",
+    storageBucket: "",
+    messagingSenderId: "348662688668"
+  };
+  firebase.initializeApp(config);
+
+  // Variable to hold the reference of the database
+  var database = firebase. database();
+
+
+    // Variables
+    var userName = "";
+    var userEmail = "";
+    var userPassword ="";
+    var recipeSearch = "";
+
+    userName = $("#name-input").val().trim();
+      userEmail = $("#email-input").val().trim();
+      userPassword = $("#age-input").val().trim();
+      recipeSearch = $(".input").val().trim();
 });
