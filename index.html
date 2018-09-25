@@ -110,6 +110,7 @@
                 </h1>
                 <p class="subtitle">
                     You will find great meals that the <strong>whole family</strong> will enjoy!
+                    
                 </p>
             </div>
         </div>
@@ -121,7 +122,7 @@
                     <div class="column is-half">
                         <div class="field has-addons">
                             <div class="control">
-                                <input id="find-recipe" class="input" type="text" placeholder="Find a recipe">
+                                <input id="find-recipe" for="search-recipe" class="input" type="text" placeholder="Find a recipe">
                             </div>
                             <div id="search-recipe" class="control">
                                 <a class="button is-primary">
@@ -140,7 +141,7 @@
 
     <section>
         <div class="container-fluid">
-            <div id="display-recipe" class="tile is-ancestor">
+            <div id="display-recipe" class="tile is-ancestor is-9 level">
                 <div class="tile is-parent">
                     <article class="tile is-child box">
                         <!-- 1st Column -->
@@ -261,14 +262,14 @@
         <div class="modal-card">
             <header class="modal-card-head">
                 <p class="modal-card-title">Kale Salad</p>
-                <button class="modal-close delete" aria-label="close"></button>
+       <!--          <button class="modal-close delete" aria-label="close"></button> -->
             </header>
             <section class="modal-card-body">
                 <!-- Content ... -->
             </section>
             <footer class="modal-card-foot">
                 <button class="button is-success">Add To Weekly Planner</button>
-                <button class="modal-close button">Cancel</button>
+                <button class="modal-close button" aria-label="close">Cancel</button>
             </footer>
         </div>
     </div>
@@ -350,7 +351,7 @@
                             </nav>
 
                             <a href="https://bulma.io" target="_blank">
-                                <img src="assets/images/logos/made-with-bulma.png" alt="Made with Bulma" width="128"
+                                <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128"
                                     height="24">
                             </a>
                         </div>

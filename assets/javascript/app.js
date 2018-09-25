@@ -18,5 +18,12 @@ $(document).ready(function () {
         $(".modal").removeClass("is-active");
     });
 
+    // clicks handler for search input and search button
+    $("#search-recipe").on("click", function () {
+        var recipe = $("#find-recipe").val().trim();
+        console.log(recipe);
+    });
+
+
 
 });
