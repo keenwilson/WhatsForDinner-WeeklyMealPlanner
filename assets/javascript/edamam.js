@@ -39,7 +39,7 @@ $(document).ready(function () {
                                 '</div>'+
                             '</div>'+
                             '<footer class="card-footer">'+
-                                    '<a href="#" class="card-footer-item">Add to Planner</a>'+
+                                    '<a href="#" id="" class="card-footer-item">Add to Planner</a>'+
                                     '<a href="#" class="card-footer-item">Save</a>'+
                                     '<a href="#" class="card-footer-item">Delete</a>'+
                             '</footer>'+

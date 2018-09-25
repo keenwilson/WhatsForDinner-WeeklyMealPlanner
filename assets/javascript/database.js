@@ -28,21 +28,38 @@ $(document).ready(function () {
   var userName = "";
   var userEmail = "";
   var userPassword = "";
-  var recipeSearch = "";
+  recipeCard = 
+  {
+
+      image:response.data.recipe.image,
+      label:response.recipe.label,
+      cal:calories,
+      yield:element.recipe.yield,
+      ingredients:response.data.recipe.ingredients.length
+     }
+   
 
 
-  $(".button").on("click", function (event) {
+  $("button").on("click", function (event) {
     event.preventDefault();
+    console.log()
     // userName = $("#name-input").val().trim();
     //   userEmail = $("#email-input").val().trim();
     //   userPassword = $("#age-input").val().trim();
-    recipeSearch = // Get API URL
+      $(this).text("Recipe Saved!");
 
     database.ref().push({
       // name: name,
       // email: email,
       // age: age,
-      recipeSearch: recipeSearch
+      image: image,
+      label:label,
+      cal:cal,
+      yield:yield,
+      ingredients:ingredients
+
+       
+      
     });
   });
 
@@ -53,14 +70,17 @@ $(document).ready(function () {
         // console.log(sv.name);
         // console.log(sv.email);
         // console.log(sv.age);
-        console.log(sv.recipeSearch);
+        console.log(sv.recipeCard);
   
         // Change the HTML to reflect
         // $("#name-display").text(sv.name);
         // $("#email-display").text(sv.email);
         // $("#age-display").text(sv.age);
         
-        $(".container-fluid").text(recipeSearch);
+        $(".container-fluid").text();
+        $(".container-fluid").text();
+        $(".container-fluid").text();
+        $(".container-fluid").text();
     
     
     
