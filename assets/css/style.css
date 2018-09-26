@@ -22,3 +22,8 @@ h6,
     background-size: 100%;
     background-repeat: no-repeat;
 }
+
+#display-recipe {
+    overflow: scroll;
+    
+}
