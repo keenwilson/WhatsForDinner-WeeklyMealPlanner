@@ -1,3 +1,5 @@
+var addMealNum;
+
 $(document).ready(function () {
     var carousels = bulmaCarousel.attach(); // carousels now contains an array of all Carousel instances
 
@@ -12,12 +14,15 @@ $(document).ready(function () {
 
     // Toggle Recipe Display (Modal)
     $(document).on("click", ".show-modal", function () {
+        console.log($(this).data("id"))
+        addMealNum = $(this).data("id");
         $(".modal").addClass("is-active");
     });
 
     $(".modal-close").click(function () {
         $(".modal").removeClass("is-active");
     });
+
 
 
 });

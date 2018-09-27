@@ -40,12 +40,12 @@ $(document).ready(function () {
                         '<p class="calories">' + calories + ' calories per serving.</p><p> Servings: ' + recipe.yield + '</p>' +
                         '<p class="ingredients">' + recipe.ingredients.length + ' Ingredients</p>' +
                         '<br>' +
-                        '<p class="subtitle"><a href="' + recipe.url + '">Get the Recipe</a></p>' +
+                        '<p class="subtitle"><a href="' + recipe.url + '" target="_blank">Get the Recipe</a></p>' +
                         '</div>' +
                         '</div>' +
                         '<footer class="card-footer">' +
-                        '<a class="button is-primary show-modal card-footer-item plannerBtn" data-id"=' + i + '">Add to Planner</a>' +
-                        '<a class="button is-primary card-footer-item saveBtn" data-id="' + i + '">Save</a>' +
+                        '<a class="button is-primary show-modal card-footer-item plannerBtn" data-id=' + i + '>Add to Planner</a>' +
+                        '<a class="button is-primary card-footer-item saveBtn" data-id=' + i + '>Save</a>' +
                         '</footer>' +
                         '</div>' +
                         // {/* '<!-- End Recipe Card -->' */}
@@ -63,7 +63,8 @@ $(document).ready(function () {
                         "caloriesPer": calories,
                         "servings": recipe.yield,
                         "numIngredients": recipe.ingredients.length,
-                        "ingredients": ingredientsArr
+                        "ingredients": ingredientsArr,
+                        "url": recipe.url
                     }
                     recipeArrFunc(recipeDBinfo);
                 });
@@ -78,12 +79,25 @@ $(document).ready(function () {
 
     $(".modal-card-title").text("Choose day of the week to save meal to:")
     $(".modal-card-body").html('                <select name="dayOfWeek" id="dayOfWeek">' +
-        '    <option value="sunday">Sunday</option>' +
-        '    <option value="monday">Monday</option>' +
-        '    <option value="tuesday">Tuesday</option>' +
-        '    <option value="wednesday">Wednesday</option>' +
-        '    <option value="thursday">Thursday</option>' +
-        '    <option value="friday">Friday</option>' +
-        '    <option value="saturday">Saturday</option>' +
-        '</select>')
+        '    <option value="mon">Monday</option>' +
+        '    <option value="tue">Tuesday</option>' +
+        '    <option value="wed">Wednesday</option>' +
+        '    <option value="thu">Thursday</option>' +
+        '    <option value="fri">Friday</option>' +
+        '    <option value="sat">Saturday</option>' +
+        '    <option value="sun">Sunday</option>' +
+        '</select>');
+    $('footer .button').click(function () {
+        console.log(addMealNum)
+        var dayOfWeek = $("#dayOfWeek").val();
+        var addedMeal = recipeArr[addMealNum];
+        console.log(addedMeal)
+        console.log(dayOfWeek + "-recipe")
+        $("#" + dayOfWeek + "-recipe").html('<a class="recipeLink" href="' + addedMeal.url + '" target="_blank">'+addedMeal.title+'</a>');
+        $("#" + dayOfWeek + "-calories").text(addedMeal.caloriesPer);
+        $("#" + dayOfWeek + "-serving").text(addedMeal.servings);
+        $("#" + dayOfWeek + "-ingredients").text(addedMeal.numIngredients);
+
+        $(".modal").removeClass("is-active");
+    })
 });
