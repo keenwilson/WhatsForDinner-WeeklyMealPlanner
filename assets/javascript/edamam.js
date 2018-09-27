@@ -19,7 +19,7 @@
             url: queryURL,
             success: function (response) {
                 console.log(response)
-                response.hits.forEach(element => {
+                response.hits.forEach(function (element, i) {
                     console.log(element)
                     var recipe = element.recipe;
                     var calories = Math.floor(recipe.calories / recipe.yield);
@@ -44,8 +44,8 @@
                                 '</div>'+
                             '</div>'+
                             '<footer class="card-footer">'+
-                                    '<a href="#" class="card-footer-item">Add to Planner</a>'+
-                                    '<a href="#" class="card-footer-item">Save</a>'+
+                                    '<a href="#" class="card-footer-item value='+i+'">Add to Planner</a>'+
+                                    '<a href="#" class="card-footer-item" value='+i+'>Save</a>'+
                                     '<a href="#" class="card-footer-item">Delete</a>'+
                             '</footer>'+
                         '</div>' +
