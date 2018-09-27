@@ -11,7 +11,7 @@ $(document).ready(function () {
     });
 
     // Toggle Recipe Display (Modal)
-    $(".show-modal").click(function () {
+    $(document).on("click", ".show-modal", function () {
         $(".modal").addClass("is-active");
     });
 
