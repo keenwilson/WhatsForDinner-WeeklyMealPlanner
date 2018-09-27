@@ -20,4 +20,11 @@ $(document).ready(function () {
     });
 
 
+    // To work more later after finishing MVP
+    $('[data-toggle="tooltip"]').tooltip(); 
+    
+
+
+
+
 });
