@@ -28,35 +28,21 @@ $(document).ready(function () {
   var userName = "";
   var userEmail = "";
   var userPassword = "";
-  recipeCard = 
-  {
-
-      image:response.data.recipe.image,
-      label:response.recipe.label,
-      cal:calories,
-      yield:element.recipe.yield,
-      ingredients:response.data.recipe.ingredients.length
-     }
-   
-
-
-  $("button").on("click", function (event) {
+     
+  $(".card-footer-item").on("click", function (event) {
     event.preventDefault();
-    console.log()
     // userName = $("#name-input").val().trim();
     //   userEmail = $("#email-input").val().trim();
     //   userPassword = $("#age-input").val().trim();
-      $(this).text("Recipe Saved!");
+    
 
-    database.ref().push({
+    console.log('i work');
+      database.ref().push({
       // name: name,
       // email: email,
       // age: age,
-      image: image,
-      label:label,
-      cal:cal,
-      yield:yield,
-      ingredients:ingredients
+      recipeArr:recipeArr[this.val()]
+     
 
        
       
@@ -65,22 +51,22 @@ $(document).ready(function () {
 
       database.ref().on("child_added", function(snapshot) {
         // storing the snapshot.val() in a variable for convenience
-        var sv = snapshot.val();
+        var sv = snapshot.data(recipeArr[$(this).val()]);
         // Console.loging the last user's data
         // console.log(sv.name);
         // console.log(sv.email);
         // console.log(sv.age);
-        console.log(sv.recipeCard);
+        console.log(sv.recipeArr[$(this).val()]);
   
         // Change the HTML to reflect
         // $("#name-display").text(sv.name);
         // $("#email-display").text(sv.email);
         // $("#age-display").text(sv.age);
         
-        $(".container-fluid").text();
-        $(".container-fluid").text();
-        $(".container-fluid").text();
-        $(".container-fluid").text();
+        // $(".container-fluid").text();
+        // $(".container-fluid").text();
+        // $(".container-fluid").text();
+        // $(".container-fluid").text();
     
     
     
