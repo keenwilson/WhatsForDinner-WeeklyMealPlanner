@@ -44,8 +44,8 @@ $(document).ready(function () {
                         '</div>' +
                         '</div>' +
                         '<footer class="card-footer">' +
-                        '<a class="button is-primary show-modal card-footer-item value=' + i + '">Add to Planner</a>' +
-                        '<a class="button is-primary card-footer-item" value=' + i + '>Save</a>' +
+                        '<a class="button is-primary show-modal card-footer-item plannerBtn" data-id"=' + i + '">Add to Planner</a>' +
+                        '<a class="button is-primary card-footer-item saveBtn" data-id="' + i + '">Save</a>' +
                         '</footer>' +
                         '</div>' +
                         // {/* '<!-- End Recipe Card -->' */}
