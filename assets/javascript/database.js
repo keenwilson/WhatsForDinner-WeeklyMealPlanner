@@ -29,19 +29,21 @@ $(document).ready(function () {
   var userEmail = "";
   var userPassword = "";
      
-  $(".card-footer-item").on("click", function (event) {
+  $(document).on("click",".saveBtn", function (event) {
     event.preventDefault();
     // userName = $("#name-input").val().trim();
     //   userEmail = $("#email-input").val().trim();
     //   userPassword = $("#age-input").val().trim();
-    
+      // var chosenRecipe = recipeArr$this.val();
+      chosenRecipe = recipeArr[$(this).data("id")];
+      console.log(chosenRecipe);
 
     console.log('i work');
       database.ref().push({
       // name: name,
       // email: email,
       // age: age,
-      recipeArr:recipeArr[this.val()]
+      chosenRecipe:chosenRecipe
      
 
        
@@ -50,23 +52,12 @@ $(document).ready(function () {
   });
 
       database.ref().on("child_added", function(snapshot) {
-        // storing the snapshot.val() in a variable for convenience
-        var sv = snapshot.data(recipeArr[$(this).val()]);
-        // Console.loging the last user's data
-        // console.log(sv.name);
-        // console.log(sv.email);
-        // console.log(sv.age);
-        console.log(sv.recipeArr[$(this).val()]);
+      
+        var sv = snapshot.data(chosenRecipe);
+      
+        console.log(sv.chosenRecipe);
   
-        // Change the HTML to reflect
-        // $("#name-display").text(sv.name);
-        // $("#email-display").text(sv.email);
-        // $("#age-display").text(sv.age);
-        
-        // $(".container-fluid").text();
-        // $(".container-fluid").text();
-        // $(".container-fluid").text();
-        // $(".container-fluid").text();
+       
     
     
     
