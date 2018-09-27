@@ -35,29 +35,20 @@
 
         <div id="navbarExampleTransparentExample" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item" href="#">
-                    Home
-                </a>
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link" href="#">
                         Starter Meal Ideas
                     </a>
                     <div class="navbar-dropdown is-boxed">
-                        <a class="navbar-item" href="#">
+                        <a id="search-sheet-pan" class="navbar-item" href="#">
                             Sheet Pan Recipes
                         </a>
-                        <a class="navbar-item" href="#">
+                        <a id="search-15-min" class="navbar-item" href="#">
                             15-Min Cooking Dinner
                         </a>
                         <hr class="navbar-divider">
-                        <a class="navbar-item" href="#">
-                             4-Ingredient Spring Pasta
-                        </a>
-                        <a class="navbar-item" href="#">
-                            Taco-Stuffed Potatoes
-                        </a>
-                        <a class="navbar-item is-active" href="#">
-                            Cheesy Broccoli Rice Casserole
+                        <a id="search-random-recipe" class="navbar-item is-active" href="#">
+                            Random a recipe!
                         </a>
                     </div>
                 </div>
@@ -149,8 +140,7 @@
                 <!-- Content ... -->
             </section>
             <footer class="modal-card-foot">
-                <button class="button is-success">Add To Weekly Planner</button>
-                <button class="modal-close button">Cancel</button>
+                <button class="button has-background-primary">Add To Weekly Planner</button>
             </footer>
         </div>
     </div>
@@ -161,6 +151,9 @@
     <section class="hero is-primary">
         <div class="hero-body">
             <div class="container">
+                <h1 class="title is-1 has-text-white" id="site-logo">
+                    What's For Dinner?
+                </h1>
                 <table id="weekly-plan" class="table is-hoverable">
                     <thead>
                         <tr>
@@ -268,8 +261,8 @@
                             </td>
                         </tr> <!-- End thursdayday -->
                         <tr id="friday">
-                            <th id="fri-recipe">Friday</th>
-                            <td><a href="#" title="recipe-name">
+                            <th>Friday</th>
+                            <td id="fri-recipe"><a href="#" title="recipe-name">
                                     <!-- recipe name-->Chicken Kale Salad</a></td>
                             <td id="fri-calories">
                                 <!-- calories -->
@@ -334,6 +327,24 @@
             </div>
         </div>
     </section>
+
+
+
+    <!-- Saved Recipes -->
+    <!-- Create content area for saved recipes using tile + card + box -->
+
+    <section>
+        <div class="container-fluid">
+            <h1 class="title">
+                Saved Recipes
+            </h1>
+            <div id="saved-recipe" class="tile is-ancestor">
+
+            </div> <!-- End tile is-ancestor -->
+        </div>
+    </section>
+
+
 
 
 
@@ -413,8 +424,7 @@
                             </nav>
 
                             <a href="https://bulma.io" target="_blank">
-                                <img src="assets/images/logos/made-with-bulma.png" alt="Made with Bulma" width="128"
-                                    height="24">
+                                <img src="assets/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
                             </a>
                         </div>
                     </div>
