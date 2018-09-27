@@ -31,3 +31,10 @@ h6,
 .actions {
     cursor: pointer;
 }
+
+.recipe-link {
+    color: #3273dc;
+}
+.recipe-link:hover {
+    color: #363636;
+}
