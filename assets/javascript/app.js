@@ -19,5 +19,20 @@ $(document).ready(function () {
         $(".modal").removeClass("is-active");
     });
 
+    // Change the entire row to editable
+    $('.edit').click(function () {
+        var currentTD = $(this).parents('tr').find('td');
+        if ($(this).html() == 'Edit') {                  
+            $.each(currentTD, function () {
+                $(this).prop('contenteditable', true)
+            });
+        } else {
+           $.each(currentTD, function () {
+                $(this).prop('contenteditable', false)
+            });
+        }
 
+        $(this).html($(this).html() == 'Edit' ? 'Save' : 'Edit')
+
+    });
 });
