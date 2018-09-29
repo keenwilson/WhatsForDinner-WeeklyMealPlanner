@@ -12,26 +12,40 @@ $(document).ready(function () {
 
     });
 
+    //=======================================================================
     // Toggle Recipe Display (Modal)
-    $(document).on("click", ".show-modal", function () {
+    $(document).on("click", ".show-recipe-modal", function () {
         console.log($(this).data("id"))
         addMealNum = $(this).data("id");
-        $(".modal").addClass("is-active");
+        $("#show-recipe").addClass("is-active");
     });
 
-    $(".modal-close").click(function () {
-        $(".modal").removeClass("is-active");
+    $(".recipe-modal-close").click(function () {
+        $("#show-recipe").removeClass("is-active");
     });
 
+    //=======================================================================
+    // Toggle Ingredients Display (Modal)
+    $(document).on("click", ".show-ingredients-modal", function () {
+        console.log($(this).data("id"))
+        addMealNum = $(this).data("id");
+        $("#show-ingredients").addClass("is-active");
+    });
+
+    $(".ingredients-modal-close").click(function () {
+        $("#show-ingredients").removeClass("is-active");
+    });
+
+    //=======================================================================
     // Change the entire row to editable
     $('.edit').click(function () {
         var currentTD = $(this).parents('tr').find('td');
-        if ($(this).html() == 'Edit') {                  
+        if ($(this).html() == 'Edit') {
             $.each(currentTD, function () {
                 $(this).prop('contenteditable', true)
             });
         } else {
-           $.each(currentTD, function () {
+            $.each(currentTD, function () {
                 $(this).prop('contenteditable', false)
             });
         }
