@@ -129,12 +129,28 @@
 
     <!-- End content area -->
 
-    <div class="modal">
+    <div id="show-recipe" class="modal">
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
                 <p class="modal-card-title">Kale Salad</p>
-                <button class="modal-close delete" aria-label="close"></button>
+                <button class="recipe-modal-close delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <!-- Content ... -->
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button has-background-primary">Add To Weekly Planner</button>
+            </footer>
+        </div>
+    </div>
+
+    <div id="show-ingredients" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Kale Salad</p>
+                <button class="ingredients-modal-close delete" aria-label="close"></button>
             </header>
             <section class="modal-card-body">
                 <!-- Content ... -->
@@ -146,6 +162,7 @@
     </div>
 
     <hr>
+
 
     <!-- Responsive Table to display weekly meal plan -->
     <section class="hero is-primary">
