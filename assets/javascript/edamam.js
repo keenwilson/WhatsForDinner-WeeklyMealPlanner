@@ -1,17 +1,17 @@
 var recipeArr = [];
 var saveToPlanner = [];
+var randomRecipe = ["Slow Cooker Pot Roast", "Asian Chicken Skillet", "Easy Pulled Pork", "Shrimp Scampi", "One-Pot Chili", "Enchiladas", "Chicken Alfredo", "Coconut Breaded Shrimp", "Macaroni and Cheese", "Broccoli Chicken Teriyaki", "Turkey Meatballs"];
+var searchTerm = "";
 $(document).ready(function () {
+    var searchFunction = function (searchTerm) {
 
-    app_id = "43a7d524";
-    api_key = "0f1843d32c0f5990d058cf960ffee888";
-
-    $("#search-recipe").on("click", function (e) {
         $("#display-recipe").empty();
         recipeArr = [];
 
         console.log($("#find-recipe").val().trim())
-        searchTerm = $("#find-recipe").val().trim();
-
+        // if ($("#find-recipe").val().trim() !== "") {
+        //     searchTerm = $("#find-recipe").val().trim();
+        // }
 
         queryURL = "https://api.edamam.com/search?q=" + searchTerm + "&app_id=" + app_id + "&app_key=" + api_key;
         $.ajax({
@@ -71,7 +71,26 @@ $(document).ready(function () {
             }
         });
         $("#find-recipe").val("");
-    })
+    }
+
+
+    app_id = "43a7d524";
+    api_key = "0f1843d32c0f5990d058cf960ffee888";
+
+    $("#search-recipe").on("click", function (e) {
+        if ($("#find-recipe").val() !== "") {
+            searchTerm = $("#find-recipe").val().trim();
+            searchFunction(searchTerm);
+        } else {
+            return false;
+        }
+    });
+    
+    $("#find-recipe").keypress(function (e) {
+        if (e.which == 13) {
+            $("#search-recipe").click();
+        }
+    });
     var recipeArrFunc = function (recipe) {
         recipeArr.push(recipe);
         console.log(recipeArr)
@@ -93,11 +112,24 @@ $(document).ready(function () {
         var addedMeal = recipeArr[addMealNum];
         console.log(addedMeal)
         console.log(dayOfWeek + "-recipe")
-        $("#" + dayOfWeek + "-recipe").html('<a class="recipeLink" href="' + addedMeal.url + '" target="_blank">'+addedMeal.title+'</a>');
+        $("#" + dayOfWeek + "-recipe").html('<a class="recipeLink" href="' + addedMeal.url + '" target="_blank">' + addedMeal.title + '</a>');
         $("#" + dayOfWeek + "-calories").text(addedMeal.caloriesPer);
         $("#" + dayOfWeek + "-serving").text(addedMeal.servings);
         $("#" + dayOfWeek + "-ingredients").text(addedMeal.numIngredients);
 
         $(".modal").removeClass("is-active");
     })
+    $(document).on("click", ".quickPicks", function () {
+        console.log($(this).data("id"))
+        searchTerm = $(this).data("id");
+        $("#search-recipe").click();
+
+    });
+    $("#search-random-recipe").click(function () {
+        var randomNum = Math.floor(Math.random() * (randomRecipe.length));
+        searchTerm = randomRecipe[randomNum];
+        console.log(searchTerm)
+        searchFunction(searchTerm);
+    });
+
 });
