@@ -38,4 +38,9 @@ $(document).ready(function () {
 
     //=======================================================================
 
+
+    // Function to export weekly plan to ?? file
+    $("#export").on("click", function (e) {
+        e.preventDefault();
+    })
 });
