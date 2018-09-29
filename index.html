@@ -16,6 +16,9 @@
     <!-- Link Customized CSS -->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
+
 
 </head>
 
@@ -133,10 +136,10 @@
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
-                <p class="modal-card-title">Kale Salad</p>
+                <p id="show-recipe-title" class="modal-card-title">Kale Salad</p>
                 <button class="recipe-modal-close delete" aria-label="close"></button>
             </header>
-            <section class="modal-card-body">
+            <section id="show-recipe-body" class="modal-card-body">
                 <!-- Content ... -->
             </section>
             <footer class="modal-card-foot">
@@ -149,13 +152,13 @@
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
-                <p class="modal-card-title">Kale Salad</p>
+                <p id="show-ingredients-title" class="modal-card-title">Kale Salad</p>
                 <button class="ingredients-modal-close delete" aria-label="close"></button>
             </header>
-            <section class="modal-card-body">
+            <section id="show-ingredients-body" class="modal-card-body">
                 <!-- Content ... -->
             </section>
-            <footer class="modal-card-foot">
+            <footer id="show-ingredients-footer" class="modal-card-foot">
                 <button class="button has-background-primary">Add To Weekly Planner</button>
             </footer>
         </div>
@@ -361,7 +364,9 @@
         </div>
     </section>
 
+ <div id="map" class="container">
 
+ </div>
 
 
 
@@ -462,6 +467,7 @@
     <!-- Link JavaScript -->
     <script src="assets/javascript/app.js"></script>
     <script src="assets/javascript/edamam.js"></script>
+    <script src="assets/javascript/mapquest.js"></script>
 
     <!-- Link Firebase-->
     <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>

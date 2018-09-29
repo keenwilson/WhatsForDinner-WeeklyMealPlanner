@@ -38,3 +38,7 @@ h6,
 .recipe-link:hover {
     color: #363636;
 }
+
+#map {
+    height: 400px;
+}
