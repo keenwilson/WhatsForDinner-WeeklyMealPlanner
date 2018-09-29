@@ -16,6 +16,9 @@
     <!-- Link Customized CSS -->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
+
 
 </head>
 
@@ -40,10 +43,10 @@
                         Starter Meal Ideas
                     </a>
                     <div class="navbar-dropdown is-boxed">
-                        <a id="search-sheet-pan" class="navbar-item" href="#">
+                        <a id="search-sheet-pan" data-id="Sheet Pan Recipes" class="navbar-item quickPicks" href="#">
                             Sheet Pan Recipes
                         </a>
-                        <a id="search-15-min" class="navbar-item" href="#">
+                        <a id="search-15-min" data-id="15 Minute" class="navbar-item quickPicks" href="#">
                             15-Min Cooking Dinner
                         </a>
                         <hr class="navbar-divider">
@@ -133,10 +136,10 @@
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
-                <p class="modal-card-title">Kale Salad</p>
+                <p id="show-recipe-title" class="modal-card-title">Kale Salad</p>
                 <button class="recipe-modal-close delete" aria-label="close"></button>
             </header>
-            <section class="modal-card-body">
+            <section id="show-recipe-body" class="modal-card-body">
                 <!-- Content ... -->
             </section>
             <footer class="modal-card-foot">
@@ -149,13 +152,13 @@
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
-                <p class="modal-card-title">Kale Salad</p>
+                <p id="show-ingredients-title" class="modal-card-title">Kale Salad</p>
                 <button class="ingredients-modal-close delete" aria-label="close"></button>
             </header>
-            <section class="modal-card-body">
+            <section id="show-ingredients-body" class="modal-card-body">
                 <!-- Content ... -->
             </section>
-            <footer class="modal-card-foot">
+            <footer id="show-ingredients-footer" class="modal-card-foot">
                 <button class="button has-background-primary">Add To Weekly Planner</button>
                 <button class="button is-success">Add To Weekly Planner</button>
                 <button class="modal-close button" aria-label="close"></button>
@@ -431,7 +434,9 @@
 
     </section>
 
+ <div id="map" class="container">
 
+ </div>
 
 
 
@@ -533,6 +538,7 @@
     <script src="assets/javascript/app.js"></script>
     <script src="assets/javascript/table.js"></script>
     <script src="assets/javascript/edamam.js"></script>
+    <script src="assets/javascript/mapquest.js"></script>
 
     <!-- Link Carousel-->
     <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@3.0.0/dist/js/bulma-carousel.min.js"></script>

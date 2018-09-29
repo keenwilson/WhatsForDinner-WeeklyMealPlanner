@@ -39,13 +39,6 @@ h6,
     color: #363636;
 }
 
-.ingredients-link {
-    color: #3273dc;
-}
-.ingredients-link:hover {
-    color: #363636;
-}
-
 #map {
     height: 400px;
 }
