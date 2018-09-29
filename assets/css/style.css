@@ -42,3 +42,10 @@ h6,
 #map {
     height: 400px;
 }
+
+.ingredients-link {
+    color: #3273dc;
+}
+.ingredients-link:hover {
+    color: #363636;
+}
