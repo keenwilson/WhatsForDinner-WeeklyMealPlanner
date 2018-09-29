@@ -4,7 +4,11 @@
 “**What's For Dinner**”
 
 ## Team Members
-Keen Wilson, Victor Adams, Micah Walker, Tim Lukens
+* [Victor Adams] ()
+* [Tim Lukens] ()
+* [Micah Walker] ()
+* [Keen Wilson] (https://keenwilson.github.io/)
+
 
 ## Project Description
 A recipe/meal plan generator browser-based app that helps the user find something to cook and plan weekly meals for their family dinner. 
@@ -12,16 +16,14 @@ A recipe/meal plan generator browser-based app that helps the user find somethin
 ## The Motivation for Development
 The main problem that most busy parents with little kids have is that **they don't know what to feed their kids**. They know the important of meal planning. There are tons of free family meal planning templates they can find on Pinterest. However, they are too busy to sit down and plan a meal for the whole week. Most of all, One of the parents often has no clue what should the kids have for dinner. These parents just want something super easy, portable, and shareable. 
 
-Wouldn't it be nice if someone (in this case, us as developers!) builds a meal plan generator that helps the user searchs and selects a recipe to a weekly calendar, and be able to share it to other caregivers. The user can create a list of ingredients that need to be picked up from grocery. 
+Wouldn't it be nice if someone (in this case, us as developers!) builds a meal plan generator that helps the user searchs and selects a recipe to a weekly calendar, and be able to share it to other caregivers! 
 
 ## Sketch of Final Product
 
 ## APIs to be Used
 
-* Edamam's Recipe Search API 
-https://developer.edamam.com/edamam-recipe-api
-
-* Google Maps API.
+* [Edamam's Recipe Search API]  (https://developer.edamam.com/edamam-recipe-api)
+* [MapQuest Search API] (https://developer.mapquest.com/documentation/search-api/v2/)
 
 ## Rough Breakdown of Tasks 
 
@@ -30,7 +32,6 @@ https://developer.edamam.com/edamam-recipe-api
 * Creat click events and register the submit button for recipe search
 * Create conten regions for where the recipe card will go
 * Allow the user to select recipe and add to meal-planning calendar
-* Create a shopping list for grocery
 * Use JS library to convert HTML to PDF for the user to get the PDF version of their meal plan
 
 * Back-end, work with APIs
