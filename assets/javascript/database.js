@@ -53,7 +53,34 @@ $(document).ready(function () {
 
   database.ref().on("child_added", function (snapshot) {
 
-    var sv = snapshot.data(chosenRecipe);
+                        $("#save-recipe").append('<div class="tile is-parent">' +
+                        '<article class="tile is-child box">' +
+                        // '<!-- 1st Column -->'
+                        '<div class="card">' +
+                        //   '<!-- Start Recipe Card -->''
+                        '<div class="card-image">' +
+                        '<figure class="image is-square">' +
+                        '<img src="' + snapshot.val().image + '" alt="Placeholder image">' +
+                        '</figure>' +
+                        '</div>' +
+                        '<div class="card-content">' +
+                        '<div class="content">' +
+                        '<h3 class="title">' + 'snapshot.val().label' + '</h3>' +
+                        '<p class="calories">' + 'snapshot.val().calories' + ' calories per serving.</p><p> Servings: ' + 'snapshot.val().yield' + '</p>' +
+                        '<p class="ingredients">' +
+                        '<a class="ingredients is-link" data-id='+$(".saveBtn").data("id")+'>' + 'snapshot.val().ingredients.length' + ' Ingredients</span></p>' +
+                        '<br>' +
+                        '<p class="subtitle"><a href="' + 'snapshot.val().url' + '" target="_blank">Get the Recipe</a></p>' +
+                        '</div>' +
+                        '</div>' +
+                        '<footer class="card-footer">' +
+                        '<a class="button is-primary show-recipe-modal card-footer-item plannerBtn" data-id=' + $(".saveBtn").data("id")+'>Add to Planner</a>' +
+                        '<a class="button is-primary card-footer-item saveBtn" data-id='+$(".saveBtn").data("id")+'>Save</a>' +
+                        '</footer>' +
+                        '</div>' +
+                        // {/* '<!-- End Recipe Card -->' */}
+                        '</article>' +
+                        '</div>');
 
     console.log(sv.chosenRecipe);
 
