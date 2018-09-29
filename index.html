@@ -82,7 +82,7 @@
     </nav>
 
     <!-- Hero + search bar -->
-    <section class="hero">
+    <section class="hero is-white">
         <div class="hero-body">
             <div class="container">
                 <h1 class="title is-1" id="site-logo">
@@ -165,12 +165,23 @@
 
 
     <!-- Responsive Table to display weekly meal plan -->
-    <section class="hero is-primary">
+    <section class="hero is-primary is-bold">
         <div class="hero-body">
             <div class="container">
-                <h1 class="title is-1 has-text-white" id="site-logo">
-                    What's For Dinner?
-                </h1>
+                <div class="columns">
+                    <div class="column">
+                            <h1 class="title is-1 has-text-white" id="site-logo">
+                                    What's For Dinner?
+                                </h1>
+                    </div>
+                    <div class="column">
+                        <a href="#" class="button is-outlined">
+                             <i class="fas fa-file-export"></i>
+                             <span>Export to ??</span>
+                        </a> 
+                    </div>
+                </div>
+                
                 <table id="weekly-plan" class="table is-hoverable">
                     <thead>
                         <tr>
@@ -184,23 +195,12 @@
                             <th>Actions</th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                            <th>
-                                <!-- Day of the Week -->
-                            </th>
-                            <th>Recipes</th>
-                            <th>Calories</th>
-                            <th>Serving</th>
-                            <th>No. of Ingredients</th>
-                            <th>Actions</th>
-                        </tr>
-                    </tfoot>
+                    
                     <tbody>
-                        <tr id="monday">
+                        <tr class="mealplan-cell" id="row-monday">
                             <th>Monday</th>
                             <td id="mon-recipe"><a href="#" title="recipe-name">
-                                    <!-- recipe name-->Chicken Kale Salad</a></td>
+                                    <!-- recipe name--></a></td>
                             <td id="mon-calories">
                                 <!-- calories -->
                             </td>
@@ -212,15 +212,18 @@
                             </td>
                             <td id="mon-actions" class="actions">
                                 <!-- Actions -->
-                                <span class="add has-text-success actions"><i class="fas fa-plus-circle" alt="Add"></i></span>
-                                <span class="edit has-text-warning actions"><i class="fas fa-pen" alt="Edit"></i></span>
-                                <span class="remove has-text-danger actions"><i class="fas fa-trash" alt="Remove"></i></span>
+                                <!-- Change -->
+                                <a class="edit has-text-warning actions" href="#" title="Change the details of this meal"><i class="fas fa-pen" alt="Change"></i></a>
+                                <!-- Remove -->
+                                <a class="remove has-text-danger actions" href="#" title="Remove the details of this meal"><span class="remove has-text-danger actions"><i class="fas fa-trash" alt="Remove"></i></span></a>
+                                <!-- <a class="add has-text-success actions" href="#" ><i class="fas fa-plus-circle" alt="Add"></i></a> -->
+                                                     
                             </td>
                         </tr> <!-- End monday -->
                         <tr id="tuesday">
                             <th>Tuesday</th>
                             <td id="tue-recipe"><a href="#" title="recipe-name">
-                                    <!-- recipe name-->Chicken Kale Salad</a></td>
+                                    <!-- recipe name--></a></td>
                             <td id="tue-calories">
                                 <!-- calories -->
                             </td>
@@ -234,13 +237,13 @@
                                 <!-- Actions -->
                                 <span class="add has-text-success actions"><i class="fas fa-plus-circle" alt="Add"></i></span>
                                 <span class="edit has-text-warning actions"><i class="fas fa-pen" alt="Edit"></i></span>
-                                <span class="remove has-text-danger actions"><i class="fas fa-trash" alt="Remove"></i></span>
+                                <span><i class="fas fa-trash" alt="Remove"></i></span>
                             </td>
                         </tr> <!-- End tuesday -->
                         <tr id="wednesday">
                             <th>Wednesday</th>
                             <td id="wed-recipe"><a href="#" title="recipe-name">
-                                    <!-- recipe name-->Chicken Kale Salad</a></td>
+                                    <!-- recipe name--></a></td>
                             <td id="wed-calories">
                                 <!-- calories -->
                             </td>
@@ -260,7 +263,7 @@
                         <tr id="thursday">
                             <th>Thursday</th>
                             <td id="thu-recipe"><a href="#" title="recipe-name">
-                                    <!-- recipe name-->Chicken Kale Salad</a></td>
+                                    <!-- recipe name--></a></td>
                             <td id="thu-calories">
                                 <!-- calories -->
                             </td>
@@ -280,7 +283,7 @@
                         <tr id="friday">
                             <th>Friday</th>
                             <td id="fri-recipe"><a href="#" title="recipe-name">
-                                    <!-- recipe name-->Chicken Kale Salad</a></td>
+                                    <!-- recipe name--></a></td>
                             <td id="fri-calories">
                                 <!-- calories -->
                             </td>
@@ -300,7 +303,7 @@
                         <tr id="saturday">
                             <th>Saturday</th>
                             <td id="sat-recipe"><a href="#" title="recipe-name">
-                                    <!-- recipe name-->Chicken Kale Salad</a></td>
+                                    <!-- recipe name--></a></td>
                             <td id="sat-calories">
                                 <!-- calories -->
                             </td>
@@ -320,7 +323,7 @@
                         <tr id="sunday">
                             <th>Sunday</th>
                             <td id="sun-recipe"><a href="#" title="recipe-name">
-                                    <!-- recipe name-->Chicken Kale Salad</a></td>
+                                    <!-- recipe name--></a></td>
                             <td id="sun-calories">
                                 <!-- calories -->
                             </td>
@@ -350,15 +353,18 @@
     <!-- Saved Recipes -->
     <!-- Create content area for saved recipes using tile + card + box -->
 
-    <section>
-        <div class="container-fluid">
-            <h1 class="title">
-                Saved Recipes
-            </h1>
-            <div id="saved-recipe" class="tile is-ancestor">
-
-            </div> <!-- End tile is-ancestor -->
+    <section class="hero is-bold is-dark">
+        <div class="hero-body">
+                <div class="container-fluid">
+                        <h1 class="title">
+                            Saved Recipes
+                        </h1>
+                        <div id="saved-recipe" class="tile is-ancestor">
+            
+                        </div> <!-- End tile is-ancestor -->
+                    </div>
         </div>
+        
     </section>
 
 
@@ -461,6 +467,7 @@
         crossorigin="anonymous"></script>
     <!-- Link JavaScript -->
     <script src="assets/javascript/app.js"></script>
+    <script src="assets/javascript/table.js"></script>
     <script src="assets/javascript/edamam.js"></script>
 
     <!-- Link Carousel-->
