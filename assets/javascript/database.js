@@ -28,40 +28,40 @@ $(document).ready(function () {
   var userName = "";
   var userEmail = "";
   var userPassword = "";
-     
-  $(document).on("click",".saveBtn", function (event) {
+
+  $(document).on("click", ".saveBtn", function (event) {
     event.preventDefault();
     // userName = $("#name-input").val().trim();
     //   userEmail = $("#email-input").val().trim();
     //   userPassword = $("#age-input").val().trim();
-      // var chosenRecipe = recipeArr$this.val();
-      chosenRecipe = recipeArr[$(this).data("id")];
-      console.log(chosenRecipe);
+    // var chosenRecipe = recipeArr$this.val();
+    chosenRecipe = recipeArr[$(this).data("id")];
+    console.log(chosenRecipe);
 
     console.log('i work');
-      database.ref().push({
+    database.ref().push({
       // name: name,
       // email: email,
       // age: age,
-      chosenRecipe:chosenRecipe
-     
+      chosenRecipe: chosenRecipe
 
-       
-      
+
+
+
     });
   });
 
-      database.ref().on("child_added", function(snapshot) {
-      
-        var sv = snapshot.data(chosenRecipe);
-      
-        console.log(sv.chosenRecipe);
-  
-       
-    
-    
-    
-      }, function (errorObject) {
-      console.log("Errors handled: " + errorObject.code);
-    });
+  database.ref().on("child_added", function (snapshot) {
+
+    var sv = snapshot.data(chosenRecipe);
+
+    console.log(sv.chosenRecipe);
+
+
+
+
+
+  }, function (errorObject) {
+    console.log("Errors handled: " + errorObject.code);
+  });
 });
