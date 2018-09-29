@@ -1,7 +1,7 @@
 var html2img = $("#weekly-plan")[0];
 
-$("#weekly-plan").click(function () {
-	html2canvas(html2img,{width: 600, height: 450}).then(function(canvas) {
+$("#export").click(function () {
+	html2canvas(html2img,{width: 510, height: 400}).then(function(canvas) {
 		$("#show-ingredients-body").empty();
 		$("#show-ingredients-body").append(canvas);
 	});
