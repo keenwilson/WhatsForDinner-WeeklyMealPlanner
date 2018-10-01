@@ -1,3 +1,16 @@
+// Responsive table
+$(document).ready(function(){
+    $('.js-table-data td').each(function(){
+      var tdIndex = $(this).index();
+      if ($('tr').find('th').eq(tdIndex).attr('data-label')) {
+        var thText = $('tr').find('th').eq(tdIndex).data('label');
+      } else {
+        var thText = $('tr').find('th').eq(tdIndex).text();
+      }
+      $(this).attr('data-label', thText + ':');
+    });
+  })
+
 // Functions of make content in weekly meal plan table editable
 
 // Monday
@@ -10,6 +23,7 @@ $(".mon-actions").on("click", function (e) {
         // If the user clicks 'change' icon
         // Set the 'contenteditable' attribute to 'true'
         $("#mon-recipe").prop('contenteditable', true);
+        $("#mon-comment").prop('contenteditable', true);   
         $("#mon-calories").prop('contenteditable', true);
         $("#mon-serving").prop('contenteditable', true);
         $("#mon-ingredients").prop('contenteditable', true);
@@ -20,6 +34,7 @@ $(".mon-actions").on("click", function (e) {
         // If the user clicks 'add' icon
         // Set the 'contenteditable' attribute to 'false'
         $("#mon-recipe").prop('contenteditable', false);
+        $("#mon-comment").prop('contenteditable', false);
         $("#mon-calories").prop('contenteditable', false);
         $("#mon-serving").prop('contenteditable', false);
         $("#mon-ingredients").prop('contenteditable', false);
@@ -30,6 +45,7 @@ $(".mon-actions").on("click", function (e) {
         // If the user clicks 'remove' icon
         // Empty the HTML contents
         $("#mon-recipe").empty();
+        $("#mon-comment").empty();
         $("#mon-calories").empty();
         $("#mon-serving").empty();
         $("#mon-ingredients").empty();

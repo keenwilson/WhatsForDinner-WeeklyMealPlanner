@@ -29,14 +29,14 @@
             <a id="site-logo" class="navbar-item" href="#">
                 What's For Dinner?
             </a>
-            <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="start-menu-ideas">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
             </div>
         </div>
 
-        <div id="navbarExampleTransparentExample" class="navbar-menu">
+        <div id="start-menu-ideas" class="navbar-menu">
             <div class="navbar-start">
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link" href="#">
@@ -65,18 +65,11 @@
                                     <i class="fas fa-user"></i>
                                 </span>
                                 <span id="username">
-                                    Username
+                                    Login
                                 </span>
                             </a>
                         </p>
-                        <p class="control">
-                            <a class="button is-primary" href="https://github.com/keenwilson/group5-studio-meal-plan">
-                                <span class="icon">
-                                    <i class="fas fa-code"></i>
-                                </span>
-                                <span>View Source</span>
-                            </a>
-                        </p>
+                        
                     </div>
                 </div>
             </div>
@@ -88,7 +81,14 @@
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
-                <button class="is-right user-modal-close delete" aria-label="close"></button>
+
+
+
+                <p id="show-user-title" class="modal-card-title">Enter your name</p>
+                <button class="user-modal-close  delete" aria-label="close"></button>
+
+
+
             </header>
             <section class="modal-card-body">
                 <div class="field">
@@ -155,7 +155,7 @@
 
     <section>
         <div class="container-fluid">
-            <div id="display-recipe" class="tile is-ancestor">
+            <div id="display-recipe" class="tile is-ancestor is-mobile">
 
             </div> <!-- End tile is-ancestor -->
         </div>
@@ -207,245 +207,228 @@
     <section class="hero is-primary is-bold">
         <div class="hero-body" id="weekly-planner-body">
             <div class="container">
-                <div class="columns">
-                    <div class="column">
-                        <h1 class="title is-1 has-text-white" id="site-logo">
-                            What's For Dinner?
-                        </h1>
-                    </div>
-                    <div class="column">
-                        <a id="export" href="#" class="button is-outlined">
-                            <i class="fas fa-file-export"></i>
-                            <span>Export to ??</span>
-                        </a>
+
+                <div class="tile is-ancestor">
+                    <div class="tile is-parent is-12">
+                        <div class="tile is-child">
+                            <h2 class="title is-1 has-text-white" id="site-logo">
+                                What's For Dinner?
+                            </h2>
+                        </div>
+                        <div class="tile is-child">
+
+                            <p class="control">
+                                <a id="export" class="button is-primary is-inverted" href="#">
+                                    <span class="icon">
+                                            <i class="fas fa-file-export"></i>
+                                    </span>
+                                        <span>Export to Image</span>
+                                    </a>
+                            </p>
+
+
+                        </div>
                     </div>
                 </div>
 
-                <table id="weekly-plan" class="table is-striped is-hoverable">
-                    <thead>
-                        <tr>
-                            <th>
-                                <!-- Day of the Week -->
-                            </th>
-                            <th>Recipes</th>
-                            <th>Calories</th>
-                            <th>Serving</th>
-                            <th>No. of Ingredients</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
+                <div class="container">
+                    <article class="tile is-child">
+                        <!-- Testing new layout for weekly meal plan -->
+                        <table id="weekly-plan" class="table is-striped is-hoverable js-table-data">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <!-- Day of the Week -->
+                                    </th>
+                                    <th><i class="fas fa-utensils"></i> Recipes</th>
+                                    <th><i class="far fa-comments"></i> Comments</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
 
-                    <tbody>
-                        <!--------------------------- Monday --------------------------->
-                        <tr class="mealplan-cell" id="row-monday">
-                            <th>Monday</th>
-                            <td id="mon-recipe" class="recipe-link" contenteditable="false"><a href="#" title="recipe-name">
-                                    <!-- recipe name--></a></td>
-                            <td id="mon-calories" contenteditable="false">
-                                <!-- calories -->
-                            </td>
-                            <td id="mon-serving" contenteditable="false">
-                                <!-- serving -->
-                            </td>
-                            <td id="mon-ingredients" class="ingredients-link" contenteditable="false">
-                                <!-- no. of ingredients -->
-                            </td>
-                            <td class="day-actions">
-                                <!-- Actions -->
-                                <!-- Add -->
-                                <a id="mon-add" data-action="add" class="has-text-success mon-actions is-hidden" title="Add the details of this meal"><i
-                                        class="fas fa-plus-circle" alt="Add"></i></a>
-                                <!-- Change -->
-                                <a id="mon-change" data-action="change" class="has-text-warning mon-actions" href="#"
-                                    title="Change the details of this meal"><i class="fas fa-pen" alt="Change"></i></a>
-                                <!-- Remove -->
-                                <a id="mon-remove" data-action="remove" class="has-text-danger mon-actions" href="#"
-                                    title="Remove the details of this meal"><span class="remove has-text-danger actions"><i
-                                            class="fas fa-trash" alt="Remove"></i></span></a>
-                            </td>
-                        </tr>
-                        <!--------------------------- End Monday --------------------------->
-                        <!--------------------------- Tuesday --------------------------->
-                        <tr class="mealplan-cell" id="row-tuesday">
-                            <th>Tuesday</th>
-                            <td id="tue-recipe" class="recipe-link" contenteditable="false"><a href="#" title="recipe-name">
-                                    <!-- recipe name--></a></td>
-                            <td id="tue-calories" contenteditable="false">
-                                <!-- calories -->
-                            </td>
-                            <td id="tue-serving" contenteditable="false">
-                                <!-- serving -->
-                            </td>
-                            <td id="tue-ingredients" class="ingredients-link" contenteditable="false">
-                                <!-- no. of ingredients -->
-                            </td>
-                            <td class="day-actions">
-                                <!-- Actions -->
-                                <!-- Add -->
-                                <a id="tue-add" data-action="add" class="has-text-success tue-actions is-hidden" title="Add the details of this meal"><i
-                                        class="fas fa-plus-circle" alt="Add"></i></a>
-                                <!-- Change -->
-                                <a id="tue-change" data-action="change" class="has-text-warning tue-actions" href="#"
-                                    title="Change the details of this meal"><i class="fas fa-pen" alt="Change"></i></a>
-                                <!-- Remove -->
-                                <a id="tue-remove" data-action="remove" class="has-text-danger tue-actions" href="#"
-                                    title="Remove the details of this meal"><span class="remove has-text-danger actions"><i
-                                            class="fas fa-trash" alt="Remove"></i></span></a>
-                            </td>
-                        </tr>
-                        <!--------------------------- End Tuesday --------------------------->
-                        <!--------------------------- Wednesday --------------------------->
-                        <tr class="mealplan-cell" id="row-wednesday">
-                            <th>Wednesday</th>
-                            <td id="wed-recipe" class="recipe-link" contenteditable="false"><a href="#" title="recipe-name">
-                                    <!-- recipe name--></a></td>
-                            <td id="wed-calories" contenteditable="false">
-                                <!-- calories -->
-                            </td>
-                            <td id="wed-serving" contenteditable="false">
-                                <!-- serving -->
-                            </td>
-                            <td id="wed-ingredients" class="ingredients-link" contenteditable="false">
-                                <!-- no. of ingredients -->
-                            </td>
-                            <td class="day-actions">
-                                <!-- Actions -->
-                                <!-- Add -->
-                                <a id="wed-add" data-action="add" class="has-text-success wed-actions is-hidden" title="Add the details of this meal"><i
-                                        class="fas fa-plus-circle" alt="Add"></i></a>
-                                <!-- Change -->
-                                <a id="wed-change" data-action="change" class="has-text-warning wed-actions" href="#"
-                                    title="Change the details of this meal"><i class="fas fa-pen" alt="Change"></i></a>
-                                <!-- Remove -->
-                                <a id="wed-remove" data-action="remove" class="has-text-danger wed-actions" href="#"
-                                    title="Remove the details of this meal"><span class="remove has-text-danger actions"><i
-                                            class="fas fa-trash" alt="Remove"></i></span></a>
-                            </td>
-                        </tr>
-                        <!--------------------------- End Wednesday --------------------------->
-                        <!--------------------------- Thursday --------------------------->
-                        <tr class="mealplan-cell" id="row-thursday">
-                            <th>Thursday</th>
-                            <td id="thu-recipe" class="recipe-link" contenteditable="false"><a href="#" title="recipe-name">
-                                    <!-- recipe name--></a></td>
-                            <td id="thu-calories" contenteditable="false">
-                                <!-- calories -->
-                            </td>
-                            <td id="thu-serving" contenteditable="false">
-                                <!-- serving -->
-                            </td>
-                            <td id="thu-ingredients" class="ingredients-link" contenteditable="false">
-                                <!-- no. of ingredients -->
-                            </td>
-                            <td class="day-actions">
-                                <!-- Actions -->
-                                <!-- Add -->
-                                <a id="thu-add" data-action="add" class="has-text-success thu-actions is-hidden" title="Add the details of this meal"><i
-                                        class="fas fa-plus-circle" alt="Add"></i></a>
-                                <!-- Change -->
-                                <a id="thu-change" data-action="change" class="has-text-warning thu-actions" href="#"
-                                    title="Change the details of this meal"><i class="fas fa-pen" alt="Change"></i></a>
-                                <!-- Remove -->
-                                <a id="thu-remove" data-action="remove" class="has-text-danger thu-actions" href="#"
-                                    title="Remove the details of this meal"><span class="remove has-text-danger actions"><i
-                                            class="fas fa-trash" alt="Remove"></i></span></a>
-                            </td>
-                        </tr>
-                        <!--------------------------- End Thursday --------------------------->
-                        <!--------------------------- Friday --------------------------->
-                        <tr class="mealplan-cell" id="row-friday">
-                            <th>Friday</th>
-                            <td id="fri-recipe" class="recipe-link" contenteditable="false"><a href="#" title="recipe-name">
-                                    <!-- recipe name--></a></td>
-                            <td id="fri-calories" contenteditable="false">
-                                <!-- calories -->
-                            </td>
-                            <td id="fri-serving" contenteditable="false">
-                                <!-- serving -->
-                            </td>
-                            <td id="fri-ingredients" class="ingredients-link" contenteditable="false">
-                                <!-- no. of ingredients -->
-                            </td>
-                            <td class="day-actions">
-                                <!-- Actions -->
-                                <!-- Add -->
-                                <a id="fri-add" data-action="add" class="has-text-success fri-actions is-hidden" title="Add the details of this meal"><i
-                                        class="fas fa-plus-circle" alt="Add"></i></a>
-                                <!-- Change -->
-                                <a id="fri-change" data-action="change" class="has-text-warning fri-actions" href="#"
-                                    title="Change the details of this meal"><i class="fas fa-pen" alt="Change"></i></a>
-                                <!-- Remove -->
-                                <a id="fri-remove" data-action="remove" class="has-text-danger fri-actions" href="#"
-                                    title="Remove the details of this meal"><span class="remove has-text-danger actions"><i
-                                            class="fas fa-trash" alt="Remove"></i></span></a>
-                            </td>
-                        </tr>
-                        <!--------------------------- End Friday --------------------------->
-                        <!--------------------------- Saturday --------------------------->
-                        <tr class="mealplan-cell" id="row-saturday">
-                            <th>Saturday</th>
-                            <td id="sat-recipe" class="recipe-link" contenteditable="false"><a href="#" title="recipe-name">
-                                    <!-- recipe name--></a></td>
-                            <td id="sat-calories" contenteditable="false">
-                                <!-- calories -->
-                            </td>
-                            <td id="sat-serving" contenteditable="false">
-                                <!-- serving -->
-                            </td>
-                            <td id="sat-ingredients" class="ingredients-link" contenteditable="false">
-                                <!-- no. of ingredients -->
-                            </td>
-                            <td class="day-actions">
-                                <!-- Actions -->
-                                <!-- Add -->
-                                <a id="sat-add" data-action="add" class="has-text-success sat-actions is-hidden" title="Add the details of this meal"><i
-                                        class="fas fa-plus-circle" alt="Add"></i></a>
-                                <!-- Change -->
-                                <a id="sat-change" data-action="change" class="has-text-warning sat-actions" href="#"
-                                    title="Change the details of this meal"><i class="fas fa-pen" alt="Change"></i></a>
-                                <!-- Remove -->
-                                <a id="sat-remove" data-action="remove" class="has-text-danger sat-actions" href="#"
-                                    title="Remove the details of this meal"><span class="remove has-text-danger actions"><i
-                                            class="fas fa-trash" alt="Remove"></i></span></a>
-                            </td>
-                        </tr>
-                        <!--------------------------- End Saturday --------------------------->
-                        <!--------------------------- Sunday --------------------------->
-                        <tr class="mealplan-cell" id="row-sunday">
-                            <th>Sunday</th>
-                            <td id="sun-recipe" class="recipe-link" contenteditable="false"><a href="#" title="recipe-name">
-                                    <!-- recipe name--></a></td>
-                            <td id="sun-calories" contenteditable="false">
-                                <!-- calories -->
-                            </td>
-                            <td id="sun-serving" contenteditable="false">
-                                <!-- serving -->
-                            </td>
-                            <td id="sun-ingredients" class="ingredients-link" contenteditable="false">
-                                <!-- no. of ingredients -->
-                            </td>
-                            <td class="day-actions">
-                                <!-- Actions -->
-                                <!-- Add -->
-                                <a id="sun-add" data-action="add" class="has-text-success sun-actions is-hidden" title="Add the details of this meal"><i
-                                        class="fas fa-plus-circle" alt="Add"></i></a>
-                                <!-- Change -->
-                                <a id="sun-change" data-action="change" class="has-text-warning sun-actions" href="#"
-                                    title="Change the details of this meal"><i class="fas fa-pen" alt="Change"></i></a>
-                                <!-- Remove -->
-                                <a id="sun-remove" data-action="remove" class="has-text-danger sun-actions" href="#"
-                                    title="Remove the details of this meal"><span class="remove has-text-danger actions"><i
-                                            class="fas fa-trash" alt="Remove"></i></span></a>
-                            </td>
-                        </tr>
-                        <!--------------------------- End Sunday --------------------------->
+                            <tbody>
+                                <!--------------------------- Monday --------------------------->
+                                <tr class="mealplan-cell" id="row-monday">
+                                    <th>Monday</th>
+                                    <td data-label="Recipe" id="mon-recipe" class="recipe-link" contenteditable="false"><a
+                                            href="#" title="recipe-name">
+                                            <!-- recipe name--></a></td>
+                                    <td data-label="Comment" id="mon-comment" contenteditable="false">
+                                        <!-- comment -->
+                                    </td>
+                                    <td data-label="Actions" class="day-actions">
+                                        <!-- Actions -->
+                                        <!-- Add -->
+                                        <a id="mon-add" data-action="add" class="has-text-success mon-actions is-hidden"
+                                            title="Add the details of this meal"><i class="fas fa-plus-circle" alt="Add"></i></a>
+                                        <!-- Change -->
+                                        <a id="mon-change" data-action="change" class="has-text-warning mon-actions"
+                                            href="#" title="Change the details of this meal"><i class="fas fa-pen" alt="Change"></i></a>
+                                        <!-- Remove -->
+                                        <a id="mon-remove" data-action="remove" class="has-text-danger mon-actions"
+                                            href="#" title="Remove the details of this meal"><span class="remove has-text-danger actions"><i
+                                                    class="fas fa-trash" alt="Remove"></i></span></a>
+                                    </td>
+                                </tr>
+                                <!--------------------------- End Monday --------------------------->
+                                <!--------------------------- Tuesday --------------------------->
+                                <tr class="mealplan-cell" id="row-tuesday">
+                                    <th>Tuesday</th>
+                                    <td id="tue-recipe" class="recipe-link" contenteditable="false"><a href="#" title="recipe-name">
+                                            <!-- recipe name--></a></td>
+                                    <td id="tue-comment" contenteditable="false">
+                                        <!-- comment -->
+                                    </td>
+                                    <td class="day-actions">
+                                        <!-- Actions -->
+                                        <!-- Add -->
+                                        <a id="tue-add" data-action="add" class="has-text-success tue-actions is-hidden"
+                                            title="Add the details of this meal"><i class="fas fa-plus-circle" alt="Add"></i></a>
+                                        <!-- Change -->
+                                        <a id="tue-change" data-action="change" class="has-text-warning tue-actions"
+                                            href="#" title="Change the details of this meal"><i class="fas fa-pen" alt="Change"></i></a>
+                                        <!-- Remove -->
+                                        <a id="tue-remove" data-action="remove" class="has-text-danger tue-actions"
+                                            href="#" title="Remove the details of this meal"><span class="remove has-text-danger actions"><i
+                                                    class="fas fa-trash" alt="Remove"></i></span></a>
+                                    </td>
+                                </tr>
+                                <!--------------------------- End Tuesday --------------------------->
+                                <!--------------------------- Wednesday --------------------------->
+                                <tr class="mealplan-cell" id="row-wednesday">
+                                    <th>Wednesday</th>
+                                    <td id="wed-recipe" class="recipe-link" contenteditable="false"><a href="#" title="recipe-name">
+                                            <!-- recipe name--></a></td>
+                                    <td id="wed-comment" contenteditable="false">
+                                        <!-- comment -->
+                                    </td>
+                                    <td class="day-actions">
+                                        <!-- Actions -->
+                                        <!-- Add -->
+                                        <a id="wed-add" data-action="add" class="has-text-success wed-actions is-hidden"
+                                            title="Add the details of this meal"><i class="fas fa-plus-circle" alt="Add"></i></a>
+                                        <!-- Change -->
+                                        <a id="wed-change" data-action="change" class="has-text-warning wed-actions"
+                                            href="#" title="Change the details of this meal"><i class="fas fa-pen" alt="Change"></i></a>
+                                        <!-- Remove -->
+                                        <a id="wed-remove" data-action="remove" class="has-text-danger wed-actions"
+                                            href="#" title="Remove the details of this meal"><span class="remove has-text-danger actions"><i
+                                                    class="fas fa-trash" alt="Remove"></i></span></a>
+                                    </td>
+                                </tr>
+                                <!--------------------------- End Wednesday --------------------------->
+                                <!--------------------------- Thursday --------------------------->
+                                <tr class="mealplan-cell" id="row-thursday">
+                                    <th>Thursday</th>
+                                    <td id="thu-recipe" class="recipe-link" contenteditable="false"><a href="#" title="recipe-name">
+                                            <!-- recipe name--></a></td>
+                                    <td id="thu-comment" contenteditable="false">
+                                        <!-- comment -->
+                                    </td>
+                                    <td class="day-actions">
+                                        <!-- Actions -->
+                                        <!-- Add -->
+                                        <a id="thu-add" data-action="add" class="has-text-success thu-actions is-hidden"
+                                            title="Add the details of this meal"><i class="fas fa-plus-circle" alt="Add"></i></a>
+                                        <!-- Change -->
+                                        <a id="thu-change" data-action="change" class="has-text-warning thu-actions"
+                                            href="#" title="Change the details of this meal"><i class="fas fa-pen" alt="Change"></i></a>
+                                        <!-- Remove -->
+                                        <a id="thu-remove" data-action="remove" class="has-text-danger thu-actions"
+                                            href="#" title="Remove the details of this meal"><span class="remove has-text-danger actions"><i
+                                                    class="fas fa-trash" alt="Remove"></i></span></a>
+                                    </td>
+                                </tr>
+                                <!--------------------------- End Thursday --------------------------->
+                                <!--------------------------- Friday --------------------------->
+                                <tr class="mealplan-cell" id="row-friday">
+                                    <th>Friday</th>
+                                    <td id="fri-recipe" class="recipe-link" contenteditable="false"><a href="#" title="recipe-name">
+                                            <!-- recipe name--></a></td>
+                                    <td id="fri-comment" contenteditable="false">
+                                        <!-- comment -->
+                                    </td>
+                                    <td class="day-actions">
+                                        <!-- Actions -->
+                                        <!-- Add -->
+                                        <a id="fri-add" data-action="add" class="has-text-success fri-actions is-hidden"
+                                            title="Add the details of this meal"><i class="fas fa-plus-circle" alt="Add"></i></a>
+                                        <!-- Change -->
+                                        <a id="fri-change" data-action="change" class="has-text-warning fri-actions"
+                                            href="#" title="Change the details of this meal"><i class="fas fa-pen" alt="Change"></i></a>
+                                        <!-- Remove -->
+                                        <a id="fri-remove" data-action="remove" class="has-text-danger fri-actions"
+                                            href="#" title="Remove the details of this meal"><span class="remove has-text-danger actions"><i
+                                                    class="fas fa-trash" alt="Remove"></i></span></a>
+                                    </td>
+                                </tr>
+                                <!--------------------------- End Friday --------------------------->
+                                <!--------------------------- Saturday --------------------------->
+                                <tr class="mealplan-cell" id="row-saturday">
+                                    <th>Saturday</th>
+                                    <td id="sat-recipe" class="recipe-link" contenteditable="false"><a href="#" title="recipe-name">
+                                            <!-- recipe name--></a></td>
+                                    <td id="sat-comment" contenteditable="false">
+                                        <!-- comment -->
+                                    </td>
+                                    <td class="day-actions">
+                                        <!-- Actions -->
+                                        <!-- Add -->
+                                        <a id="sat-add" data-action="add" class="has-text-success sat-actions is-hidden"
+                                            title="Add the details of this meal"><i class="fas fa-plus-circle" alt="Add"></i></a>
+                                        <!-- Change -->
+                                        <a id="sat-change" data-action="change" class="has-text-warning sat-actions"
+                                            href="#" title="Change the details of this meal"><i class="fas fa-pen" alt="Change"></i></a>
+                                        <!-- Remove -->
+                                        <a id="sat-remove" data-action="remove" class="has-text-danger sat-actions"
+                                            href="#" title="Remove the details of this meal"><span class="remove has-text-danger actions"><i
+                                                    class="fas fa-trash" alt="Remove"></i></span></a>
+                                    </td>
+                                </tr>
+                                <!--------------------------- End Saturday --------------------------->
+                                <!--------------------------- Sunday --------------------------->
+                                <tr class="mealplan-cell" id="row-sunday">
+                                    <th>Sunday</th>
+                                    <td id="sun-recipe" class="recipe-link" contenteditable="false"><a href="#" title="recipe-name">
+                                            <!-- recipe name--></a></td>
+
+                                    <td id="sun-comment" contenteditable="false">
+                                        <!-- comment -->
+                                    </td>
+                                    <td class="day-actions">
+                                        <!-- Actions -->
+                                        <!-- Add -->
+                                        <a id="sun-add" data-action="add" class="has-text-success sun-actions is-hidden"
+                                            title="Add the details of this meal"><i class="fas fa-plus-circle" alt="Add"></i></a>
+                                        <!-- Change -->
+                                        <a id="sun-change" data-action="change" class="has-text-warning sun-actions"
+                                            href="#" title="Change the details of this meal"><i class="fas fa-pen" alt="Change"></i></a>
+                                        <!-- Remove -->
+                                        <a id="sun-remove" data-action="remove" class="has-text-danger sun-actions"
+                                            href="#" title="Remove the details of this meal"><span class="remove has-text-danger actions"><i
+                                                    class="fas fa-trash" alt="Remove"></i></span></a>
+                                    </td>
+                                </tr>
+                                <!--------------------------- End Sunday --------------------------->
+                            </tbody>
+                        </table>
+
+                        <!-- End Testing new layout for weekly meal plan -->
 
 
+                    </article>
 
 
-                    </tbody>
-                </table>
+                </div>
+
+
             </div>
+
+
+
+
+
+        </div>
         </div>
     </section>
 
@@ -562,14 +545,16 @@
                                     </span>
                                 </a>
                             </p>
+      
+
                             <p class="control">
-                                <a class="button is-primary" href="https://github.com/jgthms/bulma/releases/download/0.7.1/bulma-0.7.1.zip">
-                                    <span class="icon">
-                                        <i class="fas fa-download"></i>
-                                    </span>
-                                    <span>Download</span>
-                                </a>
-                            </p>
+                                    <a class="button is-primary" href="https://github.com/keenwilson/group5-studio-meal-plan">
+                                        <span class="icon">
+                                            <i class="fas fa-code"></i>
+                                        </span>
+                                        <span>View Source</span>
+                                    </a>
+                                </p>
                         </div>
                         <div class="footer-header">
                             <h3>Tools</h3>
@@ -626,14 +611,16 @@
     <!-- Link jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
 
-         <!-- Link Firebase-->
+    <!-- Link Firebase-->
     <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
 
     <!-- Link JavaScript -->
     <script src="assets/javascript/app.js"></script>
     <script src="assets/javascript/user.js"></script>
+
     <script src="assets/javascript/table.js"></script>
     <script src="assets/javascript/edamam.js"></script>
     <script src="assets/javascript/mapquest.js"></script>
@@ -642,10 +629,8 @@
     <script src="assets/javascript/html2canvas.min.js"></script>
     <script src="assets/javascript/html2img.js"></script>
 
-   
-    <!-- Link Carousel-->
 
-    
+    <!-- Link Carousel-->
     <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@3.0.0/dist/js/bulma-carousel.min.js"></script>
 </body>
 
