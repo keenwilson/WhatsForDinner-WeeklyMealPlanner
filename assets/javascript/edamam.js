@@ -107,7 +107,7 @@ $(document).ready(function () {
         '    <option value="sat">Saturday</option>' +
         '    <option value="sun">Sunday</option>' +
         '</select>');
-    $('footer .button').click(function () {
+    $('.show-recipe-footer').click(function () {
         console.log(addMealNum)
         var dayOfWeek = $("#dayOfWeek").val();
         var addedMeal = recipeArr[addMealNum];

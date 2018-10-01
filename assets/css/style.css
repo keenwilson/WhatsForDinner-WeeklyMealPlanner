@@ -1,16 +1,7 @@
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif; 
 }
 
-h1, 
-h2,
-h3,
-h4,
-h5,
-h6,
-.title {
-    font-family: 'Noto Sans', sans-serif;
-}
 
 #site-logo {
     font-family: 'Cabin Sketch', cursive;
@@ -41,4 +32,11 @@ h6,
 
 #map {
     height: 400px;
+}
+
+.ingredients-link {
+    color: #3273dc;
+}
+.ingredients-link:hover {
+    color: #363636;
 }
