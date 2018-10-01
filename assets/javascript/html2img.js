@@ -2,8 +2,9 @@ var html2img = $("#weekly-plan")[0];
 
 $("#export").click(function () {
   var canvasWidth = $("#weekly-plan").width();
+  var canvasHeight = $("#weekly-plan").height();
   console.log(canvasWidth)
-	html2canvas(html2img,{width: canvasWidth, height: 400}).then(function(canvas) {
+	html2canvas(html2img,{width: canvasWidth, height: canvasHeight}).then(function(canvas) {
 		$("#show-ingredients-body").empty();
 	$("#show-ingredients-footer").empty();
     $("#show-ingredients-body").append(canvas);
