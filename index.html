@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>What's For Dinner? | Group 5 Studio</title>
     <!-- Link Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch:700|Noto+Sans|Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch:700|Open+Sans" rel="stylesheet">
     <!-- Link Font Awesome -->
     <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
     <!-- Link Bulma -->
@@ -60,12 +60,11 @@
                 <div class="navbar-item">
                     <div class="field is-grouped">
                         <p class="control">
-                            <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet"
-                                data-social-target="http://localhost:4000" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=http://localhost:4000&amp;via=jgthms">
+                            <a class="show-user-modal bd-tw-button button">
                                 <span class="icon">
                                     <i class="fas fa-user"></i>
                                 </span>
-                                <span>
+                                <span id="username">
                                     Username
                                 </span>
                             </a>
@@ -84,6 +83,39 @@
         </div>
     </nav>
 
+    <!-- Username Modal -->
+    <div id="ask-username" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <button class="is-right user-modal-close delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="field">
+                    <label for="enter-username" class="label">Name</label>
+                    <div class="control has-icons-left has-icons-right">
+                        <input id="enter-username" class="input is-success" type="text" placeholder="Enter your name">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-user"></i>
+                        </span>
+                    </div>
+
+                </div>
+            </section>
+            <footer class="modal-card-foot">
+                <div class="field is-grouped">
+                    <div class="control">
+                        <button id="submit-user" class="button is-link">Submit</button>
+                    </div>
+                    <div class="control">
+                        <button id="cancel-user" class="button is-text">Cancel</button>
+                    </div>
+                </div>
+
+        </div>
+        </footer>
+    </div>
+    </div>
     <!-- Hero + search bar -->
     <section class="hero is-white">
         <div class="hero-body">
@@ -132,6 +164,7 @@
 
     <!-- End content area -->
 
+    <!-- Recipe Modal -->
     <div id="show-recipe" class="modal">
         <div class="modal-background"></div>
         <div class="modal-card">
@@ -143,11 +176,12 @@
                 <!-- Content ... -->
             </section>
             <footer class="modal-card-foot">
-                <button class="button has-background-primary">Add To Weekly Planner</button>
+                <button class="show-recipe-footer button has-background-primary">Add To Weekly Planner</button>
             </footer>
         </div>
     </div>
 
+    <!-- Ingredients Modal -->
     <div id="show-ingredients" class="modal">
         <div class="modal-background"></div>
         <div class="modal-card">
@@ -187,7 +221,7 @@
                     </div>
                 </div>
 
-                <table id="weekly-plan" class="table is-hoverable">
+                <table id="weekly-plan" class="table is-striped is-hoverable">
                     <thead>
                         <tr>
                             <th>
@@ -434,32 +468,41 @@
 
     </section>
 
-    <!-- <div id="map" class="container">
 
-    </div> -->
 
 
     <!-- SEARCH FOR RESTAURANT -->
-    <section class="hero is-bold is-dark">
+    <section class="hero">
         <div class="hero-body">
-            <div class="container-fluid">
-                <h1 class="title">
-                    Not enough time to cook? Search restaurants in your area:
-                </h1>
-                <label for="find-restaurant">Enter city:</label>
-                <div class="field has-addons">
-                    <div class="control">
-                        <input id="find-restaurant" class="input" type="text" placeholder="Olathe, KS">
+            <div class="container">
+                <div class="columns">
+                    <div class="column">
+                        <div class="footer-logo">
+                            <img class="is-square" src="assets/images/img-burgercooking.png">
+                        </div>
                     </div>
-                    <div id="search-restaurant" class="control">
-                        <a class="button is-primary">
-                            Search
-                        </a>
+                    <div class="column is-three-quarters">
+                        <h3 class="title">
+                            Not enough time to cook? Search restaurants in your area:
+                        </h3>
+                        <label for="find-restaurant"><i class="icon is-left fas fa-map-marked-alt"></i> Enter city:</label>
+                        <div class="field has-addons">
+                            <div class="control">
+                                <input id="find-restaurant" class="input" type="text" placeholder="Olathe, KS">
+                            </div>
+                            <div id="search-restaurant" class="control">
+                                <a class="button is-primary">
+                                    Search
+                                </a>
+                            </div>
+                        </div>
+                        <div id="restaurantArea">
+
+                        </div> <!-- restaurantArea -->
                     </div>
                 </div>
-                <div id="restaurantArea" class=" is-ancestor">
 
-                </div> <!-- End tile is-ancestor -->
+
             </div>
         </div>
 
@@ -585,6 +628,7 @@
         crossorigin="anonymous"></script>
     <!-- Link JavaScript -->
     <script src="assets/javascript/app.js"></script>
+    <script src="assets/javascript/user.js"></script>
     <script src="assets/javascript/table.js"></script>
     <script src="assets/javascript/edamam.js"></script>
     <!-- <script src="assets/javascript/mapquest.js"></script> -->
