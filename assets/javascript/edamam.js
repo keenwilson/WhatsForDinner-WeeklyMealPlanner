@@ -98,7 +98,10 @@ $(document).ready(function () {
     }
 
     $("#show-recipe-title").text("Choose day of the week to save meal to:")
-    $("#show-recipe-body").html('<select name="dayOfWeek" id="dayOfWeek">' +
+    $("#show-recipe-body").html('<div class="control has-icons-left">' +
+        '    <div class="select">' +
+        '   <select name="dayOfWeek" id="dayOfWeek">' +
+        '   <option selected>Days of the week</option>' +
         '    <option value="mon">Monday</option>' +
         '    <option value="tue">Tuesday</option>' +
         '    <option value="wed">Wednesday</option>' +
@@ -106,7 +109,14 @@ $(document).ready(function () {
         '    <option value="fri">Friday</option>' +
         '    <option value="sat">Saturday</option>' +
         '    <option value="sun">Sunday</option>' +
-        '</select>');
+        '   </select>' +
+        '   </div>' +
+        '   <span class="icon is-left">' +
+        '   <i class="far fa-calendar-alt"></i>' +
+        '   </span>' +
+        '   </div>'
+        );
+
     $('.show-recipe-footer').click(function () {
         console.log(addMealNum)
         var dayOfWeek = $("#dayOfWeek").val();
@@ -146,7 +156,7 @@ $(document).ready(function () {
 
             $("#show-ingredients-body").append(ingredientsP);
         });
-        $("#show-ingredients-title").text(recipeArr[ingredientsNum].title + " Ingredients List")
+        $("#show-ingredients-title").text(recipeArr[ingredientsNum].title + ' Ingredients List')
         $("#show-ingredients").addClass("is-active");
     })
 

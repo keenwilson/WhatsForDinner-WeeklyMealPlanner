@@ -23,7 +23,8 @@ body {
     cursor: pointer;
 }
 
-.recipe-link {
+.recipe-link,
+.recipeLink {
     color: #3273dc;
 }
 .recipe-link:hover {
@@ -39,4 +40,59 @@ body {
 }
 .ingredients-link:hover {
     color: #363636;
+}
+
+#mon-recipe,
+#tue-recipe,
+#wed-recipe,
+#thu-recipe,
+#fri-recipe,
+#sat-recipe,
+#sun-recipe {
+    width: 250px;
+}
+
+#mon-comment,
+#tue-comment,
+#wed-comment,
+#thu-recipe,
+#fri-comment,
+#sat-recipe,
+#sun-recipe {
+    width: 150px;
+}
+
+
+/* Responsive Table */
+@media screen and (max-width: 500px) {
+        .mealplan-cell { 
+            width: 375px;
+            padding: 1.5rem;
+        }
+
+        .day-actions {
+            display: none;
+        }
+
+        thead { display: none; }
+        tr {
+          display: block;
+          position: relative;
+          padding: 1.2em 0; }
+        tr:first-of-type { border-top: 1px solid #ccc; }
+        td { display: table-row; }
+        td:before {
+          content: attr(data-label);
+          display: table-cell;
+          font-weight: bold;
+          padding: 0.2em 0.6em 0.2em 0;
+          text-align: right; }
+        td:last-child:after {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border-bottom: 1px solid #ccc; }
+
 }
