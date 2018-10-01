@@ -59,4 +59,9 @@ $(document).ready(function () {
         $("#find-restaurant").val("");
 
     })
+    $("#find-restaurant").keypress(function (e) {
+        if (e.which == 13) {
+            $("#search-restaurant").click();
+        }
+    });
 })
