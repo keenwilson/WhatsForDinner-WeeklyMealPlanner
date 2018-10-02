@@ -31,7 +31,7 @@ $(document).ready(function () {
                         //   '<!-- Start Recipe Card -->''
                         '<div class="card-image">' +
                         '<figure class="image is-square">' +
-                        '<img src="' + recipe.image + '" alt="Placeholder image">' +
+                        '<img class="recipe-image" src="' + recipe.image + '" alt="Placeholder image">' +
                         '</figure>' +
                         '</div>' +
                         '<div class="card-content">' +

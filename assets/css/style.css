@@ -62,9 +62,18 @@ body {
     width: 150px;
 }
 
+@media screen and (max-width: 770px) {
+    .card-image,
+    .image.is-square img,
+    .recipe-image {
+        width: 197.766px;
+        height: 197.766px;
+    }
+}
 
 /* Responsive Table */
 @media screen and (max-width: 500px) {
+
         .mealplan-cell { 
             width: 375px;
             padding: 1.5rem;
