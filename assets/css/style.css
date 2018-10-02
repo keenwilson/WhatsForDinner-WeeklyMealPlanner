@@ -62,12 +62,28 @@ body {
     width: 150px;
 }
 
+.modal-card-title,
+.show-ingredients-title, {
+    word-wrap: break-word;
+}
+
+.ingredients-list-title {
+    font-weight: 700;
+}
 @media screen and (max-width: 770px) {
     .card-image,
     .image.is-square img,
     .recipe-image {
         width: 197.766px;
         height: 197.766px;
+    }
+
+    .modal-card-head {
+        font-size: 1.25em;
+    }
+
+    .modal-card {
+        width: 375px;
     }
 }
 

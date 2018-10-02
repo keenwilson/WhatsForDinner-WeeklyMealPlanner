@@ -149,6 +149,7 @@ $(document).ready(function () {
         $("#show-ingredients-body").empty();
         $("#show-ingredients-footer").empty();
         ingredientsNum = $(this).data("id");
+        $("#show-ingredients-body").html('<h4 class="ingredients-list-title">' + '<i class="fas fa-utensils"></i> ' + recipeArr[ingredientsNum].title + '</h4>' + '<hr>');
         modalIngredients = recipeArr[ingredientsNum].ingredients;
         modalIngredients.forEach(element => {
             ingredientsP = $("<p>");
@@ -156,7 +157,7 @@ $(document).ready(function () {
 
             $("#show-ingredients-body").append(ingredientsP);
         });
-        $("#show-ingredients-title").text(recipeArr[ingredientsNum].title + ' Ingredients List')
+        $("#show-ingredients-title").text('Ingredients List');
         $("#show-ingredients").addClass("is-active");
     })
 
