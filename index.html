@@ -26,7 +26,7 @@
     <!-- Navbar -->
     <nav class="navbar is-transparent">
         <div class="navbar-brand">
-            <a id="site-logo" class="navbar-item" href="#">
+            <a class="site-logo navbar-item" href="#">
                 What's For Dinner?
             </a>
             <div class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="start-menu-ideas">
@@ -36,10 +36,10 @@
             </div>
         </div>
 
-        <div id="start-menu-ideas" class="navbar-menu">
+        <div class="navbar-menu">
             <div class="navbar-start">
                 <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link" href="#">
+                    <a id="start-menu-ideas" class="navbar-link" href="#">
                         Starter Meal Ideas
                     </a>
                     <div class="navbar-dropdown is-boxed">
@@ -111,10 +111,10 @@
     </div>
     </div>
     <!-- Hero + search bar -->
-    <section class="hero is-white">
+    <section id="start-search" class="hero is-medium is-white">
         <div class="hero-body">
             <div class="container">
-                <h1 class="title is-1" id="site-logo">
+                <h1 class="site-logo title is-1">
                     What's For Dinner?
                 </h1>
                 <p class="subtitle">
@@ -124,11 +124,12 @@
         </div>
     </section>
     <section id="site-header" class="hero is-large">
-        <div class="hero-body">
+        <div class="hero-body level">
             <div class="container">
+
                 <div class="columns is-mobile is-centered">
                     <div class="column is-half">
-                        <div class="field has-addons">
+                        <div class="field is-fullwidth has-addons">
                             <div class="control">
                                 <input id="find-recipe" class="input" type="text" placeholder="Find a recipe">
                             </div>
@@ -205,7 +206,7 @@
                 <div class="tile is-ancestor">
                     <div class="tile is-parent is-12">
                         <div class="tile is-child">
-                            <h2 class="title is-1 has-text-white" id="site-logo">
+                            <h2 class="site-logo title is-1 has-text-white">
                                 What's For Dinner?
                             </h2>
                         </div>
@@ -431,7 +432,7 @@
     <!-- Saved Recipes -->
     <!-- Create content area for saved recipes using tile + card + box -->
 
-    <section class="hero is-bold is-dark">
+    <section id="saved-recipes-display" class="hero is-bold is-dark">
         <div class="hero-body">
             <div class="container-fluid">
                 <h1 class="title">
@@ -449,7 +450,7 @@
 
 
     <!-- SEARCH FOR RESTAURANT -->
-    <section class="hero">
+    <section id="search-restaurants-in-area" class="hero">
         <div class="hero-body">
             <div class="container">
                 <div class="columns">
@@ -493,71 +494,40 @@
             <div class="columns">
                 <div class="column">
                     <div class="footer-logo">
-                        <img src="https://bulma.io/images/placeholders/480x480.png">
+                        
+                        <h3 class="site-logo title is-1 has-text-black">
+                                What's For<br> Dinner?
+                            </h3>
                     </div>
+
                 </div>
+                
                 <div class="column">
                     <div class="footer-column">
                         <div class="footer-header">
-                            <h3>Home</h3>
-                        </div>
-                        <!--                 <ul class="link-list">
-                            <li><a href="#">Discover features</a></li>
-                            <li><a href="#">Why choose our Product ?</a></li>
-                            <li><a href="#">Compare features</a></li>
-                            <li><a href="#">Our Roadmap</a></li>
-                            <li><a href="#">Request features</a></li>
-                        </ul> -->
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="footer-column">
-                        <div class="footer-header">
-                            <h3>Featured Menus</h3>
+                            <h3>Product Features</h3>
                         </div>
                         <ul class="link-list">
-                            <li><a href="#">Family-Friendly Dinner</a></li>
-                            <li><a href="#">15-min Cooking Recipes</a></li>
-                            <li><a href="#">Weekly Theme for Fun!</a></li>
-                            <li><a href="#">Sheet Pan Recipes</a></li>
-
-                            <li><a href="#">Kid-Approved Recipes</a></li>
+                            <li><a href="#start-search">Search for recipes</a></li>
+                            <li><a href="#start-menu-ideas">Use starter meal ideas</a></li>
+                            <li><a href="#search-random-recipe">Random a classing menu</a></li>
+                            <li><a href="#search-restaurants-in-area">Find restaurants in your area</a></li>
+                            <li><a href="#saved-recipes-display">View Saved recipes</a></li>
+                            <li><a href="#weekly-planner-body">Edit weekly meal planner</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="column">
                     <div class="footer-column">
-                        <div class="field is-grouped">
-                            <p class="control">
-                                <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet"
-                                    data-social-target="http://localhost:4000" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=http://localhost:4000&amp;via=jgthms">
-                                    <span class="icon">
-                                        <i class="fab fa-twitter"></i>
-                                    </span>
-                                    <span>
-                                        Tweet
-                                    </span>
-                                </a>
-                            </p>
-      
-
-                            <p class="control">
-                                    <a class="button is-primary" href="https://github.com/keenwilson/group5-studio-meal-plan">
-                                        <span class="icon">
-                                            <i class="fas fa-code"></i>
-                                        </span>
-                                        <span>View Source</span>
-                                    </a>
-                                </p>
-                        </div>
+                        
                         <div class="footer-header">
-                            <h3>Tools</h3>
+                            <h3>Technologies Used</h3>
                         </div>
                         <ul class="link-list">
-                            <li><a href="#">Your Saved Recipes</a></li>
-                            <li><a href="#">Get a Random Meal Plan</a></li>
-                            <li><a href="#">Create an Ingredients List</a></li>
-                            <li><a href="#">Find a Grocery Store</a></li>
+                            <li><a href="https://developer.edamam.com/edamam-recipe-api">Edamam Search API</a></li>
+                            <li><a href="https://developers.zomato.com/api">Zomato API</a></li>
+                            <li><a href="https://html2canvas.hertzen.com/">html2canvas JS</a></li>
+
                         </ul>
                     </div>
                 </div>
@@ -567,23 +537,43 @@
                             <h3>Follow Us</h3>
                             <nav class="level is-mobile">
                                 <div class="level-left">
-                                    <a class="level-item" href="https://github.com/#">
-                                        <span class="icon"><i class="fa fa-github"></i></span>
+                                    <a class="level-item" target="_blank" href="https://kysper.github.io/">                      
+                                        <img class="avatar" src="assets/images/avatar-victor.png" alt="Victor Adams">
                                     </a>
-                                    <a class="level-item" href="https://dribbble.com/#">
-                                        <span class="icon"><i class="fa fa-dribbble"></i></span>
+                                    <a class="level-item" target="_blank" href="https://timlukens.com/"> 
+                                        <img class="avatar" src="assets/images/avatar-tim.png" alt="Tim Lukens">
                                     </a>
-                                    <a class="level-item" href="https://fb.com/#">
-                                        <span class="icon"><i class="fa fa-facebook"></i></span>
+                                    <a class="level-item" target="_blank" href="https://mjwalker99.github.io/Basic-Portfolio/">
+                                        <img class="avatar" src="assets/images/avatar-micah.png" alt="Micah Walker">
                                     </a>
-                                    <a class="level-item" href="https://twitter.com/#">
-                                        <span class="icon"><i class="fa fa-twitter"></i></span>
-                                    </a>
-                                    <a class="level-item" href="https://bitbucket.org/#">
-                                        <span class="icon"><i class="fa fa-bitbucket"></i></span>
+                                    <a class="level-item" target="_blank" href="https://keenwilson.github.io/"">
+                                        <img class="avatar" src="assets/images/avatar-keen.png" alt="Keen Wilson">
                                     </a>
                                 </div>
                             </nav>
+                            <div class="field is-grouped">
+                                    <p class="control">
+                                        <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet"
+                                            data-social-target="http://bit.ly/KU-WhatsForDinner" target="_blank" href="https://twitter.com/intent/tweet?text=Use What's for Dinner? app to create a weekly meal plan in less than 10 minutes!&amp;hashtags=mommyhack&amp;url=http://bit.ly/KU-WhatsForDinner&amp;">
+                                            <span class="icon">
+                                                <i class="fab fa-twitter"></i>
+                                            </span>
+                                            <span>
+                                                Tweet
+                                            </span>
+                                        </a>
+                                    </p>
+              
+        
+                                    <p class="control">
+                                            <a class="button is-primary" href="https://github.com/keenwilson/group5-studio-meal-plan">
+                                                <span class="icon">
+                                                    <i class="fas fa-code"></i>
+                                                </span>
+                                                <span>View Source</span>
+                                            </a>
+                                        </p>
+                                </div>
 
 
                             <a href="https://bulma.io" target="_blank">
