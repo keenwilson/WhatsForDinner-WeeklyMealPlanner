@@ -46,6 +46,7 @@ $(".mon-actions").on("click", function (e) {
         // Empty the HTML contents
         $("#mon-recipe").empty();
         $("#mon-comment").empty();
+        $("#mon-comment").empty();
         $("#mon-calories").empty();
         $("#mon-serving").empty();
         $("#mon-ingredients").empty();
@@ -63,6 +64,7 @@ $(".tue-actions").on("click", function (e) {
         // If the user clicks 'change' icon
         // Set the 'contenteditable' attribute to 'true'
         $("#tue-recipe").prop('contenteditable', true);
+        $("#tue-comment").prop('contenteditable', true);
         $("#tue-calories").prop('contenteditable', true);
         $("#tue-serving").prop('contenteditable', true);
         $("#tue-ingredients").prop('contenteditable', true);
@@ -73,6 +75,7 @@ $(".tue-actions").on("click", function (e) {
         // If the user clicks 'add' icon
         // Set the 'contenteditable' attribute to 'false'
         $("#tue-recipe").prop('contenteditable', false);
+        $("#tue-comment").prop('contenteditable', false);
         $("#tue-calories").prop('contenteditable', false);
         $("#tue-serving").prop('contenteditable', false);
         $("#tue-ingredients").prop('contenteditable', false);
@@ -83,6 +86,7 @@ $(".tue-actions").on("click", function (e) {
         // If the user clicks 'remove' icon
         // Empty the HTML contents
         $("#tue-recipe").empty();
+        $("#tue-comment").empty();
         $("#tue-calories").empty();
         $("#tue-serving").empty();
         $("#tue-ingredients").empty();
@@ -100,6 +104,7 @@ $(".wed-actions").on("click", function (e) {
         // If the user clicks 'change' icon
         // Set the 'contenteditable' attribute to 'true'
         $("#wed-recipe").prop('contenteditable', true);
+        $("#wed-comment").prop('contenteditable', true);
         $("#wed-calories").prop('contenteditable', true);
         $("#wed-serving").prop('contenteditable', true);
         $("#wed-ingredients").prop('contenteditable', true);
@@ -110,6 +115,7 @@ $(".wed-actions").on("click", function (e) {
         // If the user clicks 'add' icon
         // Set the 'contenteditable' attribute to 'false'
         $("#wed-recipe").prop('contenteditable', false);
+        $("#wed-comment").prop('contenteditable', false);
         $("#wed-calories").prop('contenteditable', false);
         $("#wed-serving").prop('contenteditable', false);
         $("#wed-ingredients").prop('contenteditable', false);
@@ -120,6 +126,7 @@ $(".wed-actions").on("click", function (e) {
         // If the user clicks 'remove' icon
         // Empty the HTML contents
         $("#wed-recipe").empty();
+        $("#wed-comment").empty();
         $("#wed-calories").empty();
         $("#wed-serving").empty();
         $("#wed-ingredients").empty();
@@ -137,6 +144,7 @@ $(".thu-actions").on("click", function (e) {
         // If the user clicks 'change' icon
         // Set the 'contenteditable' attribute to 'true'
         $("#thu-recipe").prop('contenteditable', true);
+        $("#thu-comment").prop('contenteditable', true);
         $("#thu-calories").prop('contenteditable', true);
         $("#thu-serving").prop('contenteditable', true);
         $("#thu-ingredients").prop('contenteditable', true);
@@ -147,6 +155,7 @@ $(".thu-actions").on("click", function (e) {
         // If the user clicks 'add' icon
         // Set the 'contenteditable' attribute to 'false'
         $("#thu-recipe").prop('contenteditable', false);
+        $("#thu-comment").prop('contenteditable', false);
         $("#thu-calories").prop('contenteditable', false);
         $("#thu-serving").prop('contenteditable', false);
         $("#thu-ingredients").prop('contenteditable', false);
@@ -157,6 +166,7 @@ $(".thu-actions").on("click", function (e) {
         // If the user clicks 'remove' icon
         // Empty the HTML contents
         $("#thu-recipe").empty();
+        $("#thu-comment").empty();
         $("#thu-calories").empty();
         $("#thu-serving").empty();
         $("#thu-ingredients").empty();
@@ -174,6 +184,7 @@ $(".fri-actions").on("click", function (e) {
         // If the user clicks 'change' icon
         // Set the 'contenteditable' attribute to 'true'
         $("#fri-recipe").prop('contenteditable', true);
+        $("#fri-comment").prop('contenteditable', true);
         $("#fri-calories").prop('contenteditable', true);
         $("#fri-serving").prop('contenteditable', true);
         $("#fri-ingredients").prop('contenteditable', true);
@@ -184,6 +195,7 @@ $(".fri-actions").on("click", function (e) {
         // If the user clicks 'add' icon
         // Set the 'contenteditable' attribute to 'false'
         $("#fri-recipe").prop('contenteditable', false);
+        $("#fri-comment").prop('contenteditable', false);
         $("#fri-calories").prop('contenteditable', false);
         $("#fri-serving").prop('contenteditable', false);
         $("#fri-ingredients").prop('contenteditable', false);
@@ -194,6 +206,7 @@ $(".fri-actions").on("click", function (e) {
         // If the user clicks 'remove' icon
         // Empty the HTML contents
         $("#fri-recipe").empty();
+        $("#fri-comment").empty();
         $("#fri-calories").empty();
         $("#fri-serving").empty();
         $("#fri-ingredients").empty();
@@ -211,6 +224,7 @@ $(".sat-actions").on("click", function (e) {
         // If the user clicks 'change' icon
         // Set the 'contenteditable' attribute to 'true'
         $("#sat-recipe").prop('contenteditable', true);
+        $("#sat-comment").prop('contenteditable', true);
         $("#sat-calories").prop('contenteditable', true);
         $("#sat-serving").prop('contenteditable', true);
         $("#sat-ingredients").prop('contenteditable', true);
@@ -221,6 +235,7 @@ $(".sat-actions").on("click", function (e) {
         // If the user clicks 'add' icon
         // Set the 'contenteditable' attribute to 'false'
         $("#sat-recipe").prop('contenteditable', false);
+        $("#sat-comment").prop('contenteditable', false);
         $("#sat-calories").prop('contenteditable', false);
         $("#sat-serving").prop('contenteditable', false);
         $("#sat-ingredients").prop('contenteditable', false);
@@ -231,6 +246,7 @@ $(".sat-actions").on("click", function (e) {
         // If the user clicks 'remove' icon
         // Empty the HTML contents
         $("#sat-recipe").empty();
+        $("#sat-comment").empty();
         $("#sat-calories").empty();
         $("#sat-serving").empty();
         $("#sat-ingredients").empty();
@@ -248,6 +264,7 @@ $(".sun-actions").on("click", function (e) {
         // If the user clicks 'change' icon
         // Set the 'contenteditable' attribute to 'true'
         $("#sun-recipe").prop('contenteditable', true);
+        $("#sun-comment").prop('contenteditable', true);
         $("#sun-calories").prop('contenteditable', true);
         $("#sun-serving").prop('contenteditable', true);
         $("#sun-ingredients").prop('contenteditable', true);
@@ -258,6 +275,7 @@ $(".sun-actions").on("click", function (e) {
         // If the user clicks 'add' icon
         // Set the 'contenteditable' attribute to 'false'
         $("#sun-recipe").prop('contenteditable', false);
+        $("#sun-comment").prop('contenteditable', false);
         $("#sun-calories").prop('contenteditable', false);
         $("#sun-serving").prop('contenteditable', false);
         $("#sun-ingredients").prop('contenteditable', false);
@@ -268,6 +286,7 @@ $(".sun-actions").on("click", function (e) {
         // If the user clicks 'remove' icon
         // Empty the HTML contents
         $("#sun-recipe").empty();
+        $("#sun-comment").empty();
         $("#sun-calories").empty();
         $("#sun-serving").empty();
         $("#sun-ingredients").empty();
