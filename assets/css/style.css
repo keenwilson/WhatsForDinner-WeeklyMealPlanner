@@ -94,6 +94,12 @@ body {
     height: 197.766px;
 }
 
+@media screen and (min-width: 769px) {
+    .hero.is-large .hero-body {
+    padding-bottom: 6rem;
+    padding-top: 6rem;
+    }
+}
 
 @media screen and (max-width: 770px) {
     .card-image,
