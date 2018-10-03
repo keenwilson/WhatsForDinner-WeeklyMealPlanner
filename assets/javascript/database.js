@@ -3,7 +3,7 @@ $(document).ready(function () {
   // Variables
   var chosenRecipe = "";
   var recipeList = [];
- 
+
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyBm3WJjLjgcJPwZFp7uoE3ii18LDpz9hm4",
@@ -25,44 +25,64 @@ $(document).ready(function () {
 
     // Select a global variable recipeArr (from edamam.js file)
     chosenRecipe = recipeArr[$(this).data("id")];
-    console.log(chosenRecipe); 
+    console.log(chosenRecipe);
 
-    // Add the save recipes to database
-    /* database.ref("users/"+currentUser).set(recipeList); */
     // Add the chosen recipe to a 'saved recipes list
     recipeList.push(chosenRecipe);
+    // Add the save recipes to database
+    database.ref("/users/Keen/").set({
+      'chosenRecipe': recipeList
+    });
 
-    savedCardRecipes = '<div class="tile is-parent">' +
-        '<article class="tile is-child box">' +  
-        '<div class="card" is-one-third>' +
-        '<div class="card-image" is-1by5>' +
-        '<figure class="image is-square">' +
-        '<img class="recipe-image" src="'+ chosenRecipe.image + '" alt="Placeholder image" is-1by5>' +
-        '</figure>' +
-        '</div>' +
-        '<div class="card-content">' +
-        '<div class="content">' +
-        '<h3 class="title">' + chosenRecipe.title + '</h3>' +
-        '<p class="calories">' + chosenRecipe.caloriesPer + ' calories per serving.</p><p> Servings: ' + chosenRecipe.servings + '</p>' +
-        '<p class="ingredients">' +
-        '<a class="ingredients is-link" data-id=" + $(".deleteBtn").data("id") + ">' + chosenRecipe.numIngredients + ' ingredients</span></p>' +
-        '<br>' +
-        '<p class="subtitle"><a class="recipe-link" href="' + chosenRecipe.url + '" target="_blank">Get the Recipe</a></p>' +
-        '</div>' +
-        '</div>' +
-        '<footer class="card-footer">' +
-        '<a class="button is-primary show-recipe-modal card-footer-item plannerBtn" data-id=" + $("deleteBtn").data("id") + ">Add to Planner</a>' +
-        '<a class="button is-primary card-footer-item deleteBtn" data-id=" + $(".deleteBtn").data("id") + ">Save</a>' +
-        '</footer>' +
-        '</div>' +
-        
-        '</article>' +
-        '</div>';
+    database.ref("/users/Keen/").on("child_added", function (snapshot) {
+      console.log(snapshot.val());
 
-    $("#saved-recipe").append(savedCardRecipes);
+      // Clear saved recipes area
+      $("#saved-recipe").empty();
+
+      // Create a card for each item in saved recipes
+      var savedRecipesArr = snapshot.val();
+      for (var i = 0; i < savedRecipesArr.length; i++) {
+
+        savedCardRecipes = '<div class="tile is-parent">' +
+          '<article class="tile is-child box">' +
+          '<div class="card" is-one-third>' +
+          '<div class="card-image" is-1by5>' +
+          '<figure class="image is-square">' +
+          '<img class="recipe-image" src="' + savedRecipesArr[i].image + '" alt="Placeholder image" is-1by5>' +
+          '</figure>' +
+          '</div>' +
+          '<div class="card-content">' +
+          '<div class="content">' +
+          '<h3 class="title">' + savedRecipesArr[i].title + '</h3>' +
+          '<p class="calories">' + savedRecipesArr[i].caloriesPer + ' calories per serving.</p><p> Servings: ' + savedRecipesArr[i].servings + '</p>' +
+          '<p class="ingredients">' +
+          '<a class="ingredients is-link" data-id=" + $(".deleteBtn").data("id") + ">' + savedRecipesArr[i].numIngredients + ' ingredients</span></p>' +
+          '<br>' +
+          '<p class="subtitle"><a class="recipe-link" href="' + savedRecipesArr[i].url + '" target="_blank">Get the Recipe</a></p>' +
+          '</div>' +
+          '</div>' +
+          '<footer class="card-footer">' +
+          '<a class="button is-primary show-recipe-modal card-footer-item plannerBtn" data-id=" + $("deleteBtn").data("id") + ">Add to Planner</a>' +
+          '<a class="button is-warning card-footer-item deleteBtn" data-id=" + $(".deleteBtn").data("id") + ">Remove</a>' +
+          '</footer>' +
+          '</div>' +
+
+          '</article>' +
+          '</div>';
+
+        $("#saved-recipe").append(savedCardRecipes);
+      }
+
+
+
+    });
+
+
+
   });
 });
- 
+
 
 
  /*  database.ref().once("value", function (snapshot) {
