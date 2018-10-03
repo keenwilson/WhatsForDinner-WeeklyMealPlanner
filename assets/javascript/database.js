@@ -1,14 +1,9 @@
 $(document).ready(function () {
 
-  // Check for click events on the navbar burger icon
-  $(".navbar-burger").click(function () {
-
-    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-    $(".navbar-burger").toggleClass("is-active");
-    $(".navbar-menu").toggleClass("is-active");
-
-  });
-
+  // Variables
+  var chosenRecipe = "";
+  var recipeList = [];
+ 
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyBm3WJjLjgcJPwZFp7uoE3ii18LDpz9hm4",
@@ -21,74 +16,73 @@ $(document).ready(function () {
   firebase.initializeApp(config);
 
   // Variable to hold the reference of the database
-  var database = firebase.database();
-
-
-  // Variables
-  var userName = "";
-  var userEmail = "";
-  var userPassword = "";
+  database = firebase.database();
 
   $(document).on("click", ".saveBtn", function (event) {
     event.preventDefault();
-    // userName = $("#name-input").val().trim();
-    //   userEmail = $("#email-input").val().trim();
-    //   userPassword = $("#age-input").val().trim();
-    // var chosenRecipe = recipeArr$this.val();
+    console.log(this)
+    console.log($(this).data("id"));
+
+    // Select a global variable recipeArr (from edamam.js file)
     chosenRecipe = recipeArr[$(this).data("id")];
-    console.log(chosenRecipe);
+    console.log(chosenRecipe); 
 
-    console.log('i work');
-    database.ref().push({
-      // name: name,
-      // email: email,
-      // age: age,
-      chosenRecipe: chosenRecipe
+    // Add the save recipes to database
+    /* database.ref("users/"+currentUser).set(recipeList); */
+    // Add the chosen recipe to a 'saved recipes list
+    recipeList.push(chosenRecipe);
 
+    savedCardRecipes = '<div class="tile is-parent">' +
+        '<article class="tile is-child box">' +  
+        '<div class="card" is-one-third>' +
+        '<div class="card-image" is-1by5>' +
+        '<figure class="image is-square">' +
+        '<img class="recipe-image" src="'+ chosenRecipe.image + '" alt="Placeholder image" is-1by5>' +
+        '</figure>' +
+        '</div>' +
+        '<div class="card-content">' +
+        '<div class="content">' +
+        '<h3 class="title">' + chosenRecipe.title + '</h3>' +
+        '<p class="calories">' + chosenRecipe.caloriesPer + ' calories per serving.</p><p> Servings: ' + chosenRecipe.servings + '</p>' +
+        '<p class="ingredients">' +
+        '<a class="ingredients is-link" data-id=" + $(".deleteBtn").data("id") + ">' + chosenRecipe.numIngredients + ' ingredients</span></p>' +
+        '<br>' +
+        '<p class="subtitle"><a class="recipe-link" href="' + chosenRecipe.url + '" target="_blank">Get the Recipe</a></p>' +
+        '</div>' +
+        '</div>' +
+        '<footer class="card-footer">' +
+        '<a class="button is-primary show-recipe-modal card-footer-item plannerBtn" data-id=" + $("deleteBtn").data("id") + ">Add to Planner</a>' +
+        '<a class="button is-primary card-footer-item deleteBtn" data-id=" + $(".deleteBtn").data("id") + ">Save</a>' +
+        '</footer>' +
+        '</div>' +
+        
+        '</article>' +
+        '</div>';
 
-
-
-    });
-  });
-
-  database.ref().on("child_added", function (snapshot) {
-
-                        $("#save-recipe").append('<div class="tile is-parent">' +
-                        '<article class="tile is-child box">' +
-                        // '<!-- 1st Column -->'
-                        '<div class="card">' +
-                        //   '<!-- Start Recipe Card -->''
-                        '<div class="card-image">' +
-                        '<figure class="image is-square">' +
-                        '<img src="' + snapshot.val().image + '" alt="Placeholder image">' +
-                        '</figure>' +
-                        '</div>' +
-                        '<div class="card-content">' +
-                        '<div class="content">' +
-                        '<h3 class="title">' + 'snapshot.val().label' + '</h3>' +
-                        '<p class="calories">' + 'snapshot.val().calories' + ' calories per serving.</p><p> Servings: ' + 'snapshot.val().yield' + '</p>' +
-                        '<p class="ingredients">' +
-                        '<a class="ingredients is-link" data-id='+$(".saveBtn").data("id")+'>' + 'snapshot.val().ingredients.length' + ' Ingredients</span></p>' +
-                        '<br>' +
-                        '<p class="subtitle"><a href="' + 'snapshot.val().url' + '" target="_blank">Get the Recipe</a></p>' +
-                        '</div>' +
-                        '</div>' +
-                        '<footer class="card-footer">' +
-                        '<a class="button is-primary show-recipe-modal card-footer-item plannerBtn" data-id=' + $(".saveBtn").data("id")+'>Add to Planner</a>' +
-                        '<a class="button is-primary card-footer-item saveBtn" data-id='+$(".saveBtn").data("id")+'>Save</a>' +
-                        '</footer>' +
-                        '</div>' +
-                        // {/* '<!-- End Recipe Card -->' */}
-                        '</article>' +
-                        '</div>');
-
-    console.log(sv.chosenRecipe);
-
-
-
-
-
-  }, function (errorObject) {
-    console.log("Errors handled: " + errorObject.code);
+    $("#saved-recipe").append(savedCardRecipes);
   });
 });
+ 
+
+
+  database.ref().once("value", function (snapshot) {
+
+    snapshot.forEach(childSnapshot => {
+      console.log(childSnapshot.val());
+      value = childSnapshot.val();
+    });
+     
+
+        console.log(value.Victor[0].image);
+        label = [value.Victor[0].label];
+        calories = [value.Victor[0].calories];
+        ingredients = [value.Victor[0].ingredients];
+        servings = [value.Victor[0].servings];
+        url = [value.Victor[0].url];
+    
+        
+
+  });
+ 
+
+

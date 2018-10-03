@@ -14,7 +14,7 @@ body {
     background-repeat: no-repeat;
 }
 
-#display-recipe {
+.display-recipe {
     overflow: scroll;
 
 }
@@ -61,11 +61,11 @@ body {
 #mon-comment,
 #tue-comment,
 #wed-comment,
-#thu-recipe,
+#thu-comment,
 #fri-comment,
-#sat-recipe,
-#sun-recipe {
-    width: 150px;
+#sat-comment,
+#sun-comment {
+    width: 250px;
 }
 
 .modal-card-title,
