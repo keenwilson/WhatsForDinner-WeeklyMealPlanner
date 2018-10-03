@@ -65,7 +65,7 @@ $(document).ready(function () {
  
 
 
-  database.ref().once("value", function (snapshot) {
+ /*  database.ref().once("value", function (snapshot) {
 
     snapshot.forEach(childSnapshot => {
       console.log(childSnapshot.val());
@@ -86,3 +86,4 @@ $(document).ready(function () {
  
 
 
+ */

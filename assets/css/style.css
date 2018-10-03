@@ -14,7 +14,9 @@ body {
     background-repeat: no-repeat;
 }
 
-.display-recipe {
+#display-recipe,
+#display-saved-recipe,
+#saved-recipe {
     overflow: scroll;
 
 }
@@ -24,10 +26,11 @@ body {
 }
 
 .recipe-link,
-.recipeLink {
-    color: #3273dc;
+.recipeLink, {
+    color: #3273dc !important;
 }
-.recipe-link:hover {
+.recipe-link:hover,
+.hero.is-light a:hover {
     color: #363636;
 }
 
@@ -84,6 +87,13 @@ body {
     border-radius: 50%;
 }
 
+.card-image,
+.image.is-square img,
+.recipe-image {
+    width: 197.766px;
+    height: 197.766px;
+}
+
 
 @media screen and (max-width: 770px) {
     .card-image,
@@ -107,7 +117,12 @@ body {
 /* Responsive Table */
 @media screen and (max-width: 500px) {
 
-       
+    #display-recipe,
+    #display-saved-recipe,
+    #saved-recipe {
+        overflow: scroll;
+    
+    }
         .mealplan-cell { 
             width: 375px;
             padding: 1.5rem;
