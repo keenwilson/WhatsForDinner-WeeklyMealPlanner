@@ -46,7 +46,7 @@ body {
 }
 
 #find-recipe {
-    width: 265px;
+    width: 100%;
 }
 
 #mon-recipe,
@@ -96,8 +96,8 @@ body {
 
 @media screen and (min-width: 769px) {
     .hero.is-large .hero-body {
-    padding-bottom: 6rem;
-    padding-top: 6rem;
+    padding-bottom: 8rem;
+    padding-top: 8rem;
     }
 }
 
@@ -120,43 +120,3 @@ body {
 
 
 
-/* Responsive Table */
-@media screen and (max-width: 500px) {
-
-    #display-recipe,
-    #display-saved-recipe,
-    #saved-recipe {
-        overflow: scroll;
-    
-    }
-        .mealplan-cell { 
-            width: 375px;
-            padding: 1.5rem;
-        }
-
-        .day-actions {
-            display: none;
-        }
-
-        thead { display: none; }
-        tr {
-          display: block;
-          position: relative;
-          padding: 1.2em 0; }
-        tr:first-of-type { border-top: 1px solid #ccc; }
-        td { display: table-row; }
-        td:before {
-          content: attr(data-label);
-          display: table-cell;
-          font-weight: bold;
-          padding: 0.2em 0.6em 0.2em 0;
-          text-align: right; }
-        td:last-child:after {
-          content: "";
-          position: absolute;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          border-bottom: 1px solid #ccc; }
-
-}
