@@ -1,10 +1,6 @@
 $(document).ready(function () {
 
-  // Variables
-  var chosenRecipe = "";
-  var recipeList = [];
-
-  // Initialize Firebase
+  // Initialize Firebase's Realtime Database JavaScript SDK
   var config = {
     apiKey: "AIzaSyBm3WJjLjgcJPwZFp7uoE3ii18LDpz9hm4",
     authDomain: "what-s-for-dinner-3fa2d.firebaseapp.com",
@@ -18,23 +14,36 @@ $(document).ready(function () {
   // Variable to hold the reference of the database
   database = firebase.database();
 
-  $(document).on("click", ".saveBtn", function (event) {
-    event.preventDefault();
-    console.log(this)
-    console.log($(this).data("id"));
+  // Initial values 
+  var chosenRecipe = "";
+
+  var currentUser;
+
+  $(document).on("click", ".saveBtn", function (e) {
+    e.preventDefault();
+
+    if (username !== "") {
+      currentUser = username
+
+    } else {
+      currentUser = 'default';
+      recipeList = [];
+      // Model to alert the user to submit a name
+      $("#alert-username").addClass("is-active");
+      return false;
+    }
 
     // Select a global variable recipeArr (from edamam.js file)
     chosenRecipe = recipeArr[$(this).data("id")];
-    console.log(chosenRecipe);
-
     // Add the chosen recipe to a 'saved recipes list
     recipeList.push(chosenRecipe);
     // Add the save recipes to database
-    database.ref("/users/Keen/").set({
+
+    database.ref("/users/").child(currentUser).set({
       'chosenRecipe': recipeList
     });
 
-    database.ref("/users/Keen/").on("child_added", function (snapshot) {
+    database.ref("/users/").child(currentUser).on("child_added", function (snapshot) {
       console.log(snapshot.val());
 
       // Clear saved recipes area
@@ -56,15 +65,13 @@ $(document).ready(function () {
           '<div class="content">' +
           '<h3 class="title">' + savedRecipesArr[i].title + '</h3>' +
           '<p class="calories">' + savedRecipesArr[i].caloriesPer + ' calories per serving.</p><p> Servings: ' + savedRecipesArr[i].servings + '</p>' +
-          '<p class="ingredients">' +
-          '<a class="ingredients is-link" data-id=" + $(".deleteBtn").data("id") + ">' + savedRecipesArr[i].numIngredients + ' ingredients</span></p>' +
           '<br>' +
-          '<p class="subtitle"><a class="recipe-link" href="' + savedRecipesArr[i].url + '" target="_blank">Get the Recipe</a></p>' +
+          '<p class="recipe-link subtitle"><a class="recipe-link" href="' + savedRecipesArr[i].url + '" target="_blank">Get the Recipe</a></p>' +
           '</div>' +
           '</div>' +
           '<footer class="card-footer">' +
-          '<a class="button is-primary show-recipe-modal card-footer-item plannerBtn" data-id=" + $("deleteBtn").data("id") + ">Add to Planner</a>' +
-          '<a class="button is-warning card-footer-item deleteBtn" data-id=" + $(".deleteBtn").data("id") + ">Remove</a>' +
+          '<a class="button is-primary card-footer-item show-recipe-modal plannerBtn" data-id=' + i + '>Add to Planner</a>' +
+          '<a class="button is-outlined card-footer-item remove-saved-recipes"><i class="far fa-trash-alt"></i></a>' +
           '</footer>' +
           '</div>' +
 
@@ -73,37 +80,12 @@ $(document).ready(function () {
 
         $("#saved-recipe").append(savedCardRecipes);
       }
-
-
-
     });
+  });
 
-
+  $(document).on("click", ".remove-saved-recipes", function (e) {
+    e.preventDefault();
+    console.log(this);
 
   });
 });
-
-
-
- /*  database.ref().once("value", function (snapshot) {
-
-    snapshot.forEach(childSnapshot => {
-      console.log(childSnapshot.val());
-      value = childSnapshot.val();
-    });
-     
-
-        console.log(value.Victor[0].image);
-        label = [value.Victor[0].label];
-        calories = [value.Victor[0].calories];
-        ingredients = [value.Victor[0].ingredients];
-        servings = [value.Victor[0].servings];
-        url = [value.Victor[0].url];
-    
-        
-
-  });
- 
-
-
- */
