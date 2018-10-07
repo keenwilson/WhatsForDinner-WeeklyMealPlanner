@@ -20,8 +20,13 @@ $("#submit-user").click(function (e) {
          database.ref("/users/").child(username).once('value').then(function (childSnapshot) {
             console.log(childSnapshot.val());
 
-            if (childSnapshot.key = 'chosenRecipe') {
+            if (childSnapshot.key == 'chosenRecipe') {
                 recipeList = childSnapshot.val().chosenRecipe;
+            } else {
+                recipeList = [];
+                database.ref("/users/").child(username).set({
+                    'chosenRecipe': recipeList
+                  });
             }
             console.log(recipeList);
         });
