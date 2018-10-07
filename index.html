@@ -155,6 +155,24 @@
 
     <!-- End content area -->
 
+    <!-- Username modal -->
+    <div id="alert-username" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <!-- Any other Bulma elements you want -->
+            <article class="message">
+                <div class="message-header">
+                    <p>Login Required</p>
+                    <button class="username-modal-close delete" aria-label="delete"></button>
+                </div>
+                <div class="message-body">
+                    To use a 'saved recipes' feature, please click the 'login' button on the top-right corner and enter your name. Thank you!
+                </div>
+            </article>
+        </div>
+        <button class="username-modal-close is-large" aria-label="close"></button>
+    </div>
+
     <!-- Recipe Modal -->
     <div id="show-recipe" class="modal">
         <div class="modal-background"></div>
@@ -167,7 +185,7 @@
                 <!-- Content ... -->
             </section>
             <footer class="modal-card-foot">
-                <button class="show-recipe-footer button has-background-primary">Add To Weekly Planner</button>
+                <button class="show-recipe-footer button is-primary">Add To Weekly Planner</button>
             </footer>
         </div>
     </div>

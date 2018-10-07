@@ -27,7 +27,7 @@ Wouldn't it be nice if someone (in this case, us as developers!) builds a meal p
 ### Product features
 * Search for recipes, use starter meal ideas, or random a classic menu
 * Select a recipe and add it to a weekly meal planner
-* Login with email and password to save recipes
+* Save recipes to your username
 * Export a planner to an image and share it to family members
 
 ### Direction for future development
