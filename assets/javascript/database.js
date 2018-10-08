@@ -78,7 +78,33 @@ $(document).ready(function () {
           '</article>' +
           '</div>';
 
-        $("#saved-recipe").append(savedCardRecipes);
+          saveMediaRecipes = '<article class="card saved-recipes-card media">' +
+          '<figure class="media-left">' +
+          '<p class="image is-64x64">' +
+          '<img src="' + savedRecipesArr[i].image + '">' +
+          '</p>' +
+          '</figure>' +
+          ' <div class="media-content">' +
+          ' <div class="content">' +
+          '<p>' +
+          '<strong>' + savedRecipesArr[i].title+ '</strong> <small>' + savedRecipesArr[i].caloriesPer +' calories per serving.</small>'  + '<small>Servings: ' + savedRecipesArr[i].servings + '</small>' +
+          '<br>' + 
+          '' +
+          '</p>' + 
+          '</div>' +
+          '<nav class="level is-mobile">' +
+          '<div class="level-left">' +
+          '<a class="level-item button is-primary card-footer-item show-recipe-modal plannerBtn" data-id=' + i + '>Add to Planner</a>' +
+          '</div>' +
+          '</nav>' +
+          '</div>' +
+          '<div class="media-right">' +
+          '<button class="remove-saved-recipes delete"></button>' +
+          '</div>' +
+          '</article>'
+         
+
+        $("#saved-recipe").append(saveMediaRecipes);
       }
     });
   });

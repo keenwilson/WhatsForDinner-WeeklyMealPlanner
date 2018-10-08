@@ -13,7 +13,6 @@
 ### Overall Application's Concept
 **A meal plan generator browser-based app** that allows the user to save searched recipes to weekly meal planner
 
-
 ### The Motivation for Development
 The main problem that most busy parents with little kids have is that **they don't know what to feed their kids**. They know the important of meal planning. There are tons of free family meal planning templates they can find on Pinterest. However, they are too busy to sit down and plan a meal for the whole week. Most of all, One of the parents often has no clue what should the kids have for dinner. These parents just want something super easy, portable, and shareable. 
 
