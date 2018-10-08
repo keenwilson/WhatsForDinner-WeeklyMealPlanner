@@ -94,6 +94,10 @@ body {
     height: 197.766px;
 }
 
+.saved-recipes-card {
+    margin: 0.5em 0.5em;
+    padding: 0.5em 0.5em 0.5em;;
+}
 @media screen and (min-width: 769px) {
     .hero.is-large .hero-body {
     padding-bottom: 8rem;
