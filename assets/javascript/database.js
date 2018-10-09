@@ -2,12 +2,12 @@ $(document).ready(function () {
 
   // Initialize Firebase's Realtime Database JavaScript SDK
   var config = {
-    apiKey: "AIzaSyBm3WJjLjgcJPwZFp7uoE3ii18LDpz9hm4",
-    authDomain: "what-s-for-dinner-3fa2d.firebaseapp.com",
-    databaseURL: "https://what-s-for-dinner-3fa2d.firebaseio.com",
-    projectId: "what-s-for-dinner-3fa2d",
+    apiKey: "AIzaSyD9fyj4PKdPdYQOFbya1qI9r1B0oi5fBPo",
+    authDomain: "what-s-for-dinner-1c1a8.firebaseapp.com",
+    databaseURL: "https://what-s-for-dinner-1c1a8.firebaseio.com",
+    projectId: "what-s-for-dinner-1c1a8",
     storageBucket: "",
-    messagingSenderId: "348662688668"
+    messagingSenderId: "627573806356"
   };
   firebase.initializeApp(config);
 
@@ -53,7 +53,7 @@ $(document).ready(function () {
       var savedRecipesArr = snapshot.val();
       for (var i = 0; i < savedRecipesArr.length; i++) {
 
-        savedCardRecipes = '<div class="tile is-parent">' +
+        /* savedCardRecipes = '<div class="tile is-parent">' +
           '<article class="tile is-child box">' +
           '<div class="card" is-one-third>' +
           '<div class="card-image" is-1by5>' +
@@ -76,7 +76,7 @@ $(document).ready(function () {
           '</div>' +
 
           '</article>' +
-          '</div>';
+          '</div>'; */
 
           saveMediaRecipes = '<article class="card saved-recipes-card media">' +
           '<figure class="media-left">' +
@@ -87,7 +87,7 @@ $(document).ready(function () {
           ' <div class="media-content">' +
           ' <div class="content">' +
           '<p>' +
-          '<strong>' + savedRecipesArr[i].title+ '</strong> <small>' + savedRecipesArr[i].caloriesPer +' calories per serving.</small>'  + '<small>Servings: ' + savedRecipesArr[i].servings + '</small>' +
+          '<strong>' + savedRecipesArr[i].title+ '</strong> <small>' + savedRecipesArr[i].caloriesPer +' calories per serving. </small>'  + '<small>Servings: ' + savedRecipesArr[i].servings + '</small>' +
           '<br>' + 
           '' +
           '</p>' + 
@@ -95,11 +95,12 @@ $(document).ready(function () {
           '<nav class="level is-mobile">' +
           '<div class="level-left">' +
           '<a class="level-item button is-primary card-footer-item show-recipe-modal plannerBtn" data-id=' + i + '>Add to Planner</a>' +
+          '<a class="level-item button is-primary is-outlined card-footer-item recipe-link" target="_blank" href="' + savedRecipesArr[i].url + '"data-id=' + i + '>Get the Recipe</a>' +
           '</div>' +
           '</nav>' +
           '</div>' +
           '<div class="media-right">' +
-          '<button class="remove-saved-recipes delete"></button>' +
+          '<button class="remove-saved-recipes delete" data-id=' + i + '></button>' +
           '</div>' +
           '</article>'
          
@@ -112,6 +113,8 @@ $(document).ready(function () {
   $(document).on("click", ".remove-saved-recipes", function (e) {
     e.preventDefault();
     console.log(this);
-
+    console.log($(this).attr('data-id'));
+    var recipeToRemove = $(this).attr('data-id');
+    database.ref("/users/").child(currentUser).child(recipeToRemove).remove();
   });
 });
